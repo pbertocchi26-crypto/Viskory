@@ -25,7 +25,7 @@ export async function GET() {
     }
 
     const { data: brandUser, error: brandUserError } = await supabase
-      .from('users')
+      .from('profiles')
       .insert({
         name: 'Marco Rossi',
         email: 'brand@viskory.com',
