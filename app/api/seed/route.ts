@@ -10,7 +10,7 @@ export async function POST() {
     const userPassword = await bcrypt.hash('password123', 10);
 
     const { data: adminUser } = await supabase
-      .from('users')
+      .from('profiles')
       .insert([
         {
           name: 'Admin User',
