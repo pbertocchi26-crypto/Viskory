@@ -8,7 +8,7 @@ export async function GET() {
     const brandPassword = await bcrypt.hash('brand123', 10);
 
     const { data: adminUser, error: adminError } = await supabase
-      .from('users')
+      .from('profiles')
       .insert({
         name: 'Admin Viskory',
         email: 'admin@viskory.com',
