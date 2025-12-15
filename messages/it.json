@@ -1,0 +1,492 @@
+{
+  "nav": {
+    "home": "Home",
+    "brands": "Marchi",
+    "rankings": "Classifica Brand",
+    "cart": "Carrello",
+    "login": "Accedi",
+    "signup": "Registrati",
+    "admin": "Admin",
+    "dashboard": "Dashboard",
+    "profile": "Profilo",
+    "editProfile": "Modifica Profilo",
+    "logout": "Esci"
+  },
+  "home": {
+    "hero": {
+      "title": "Scopri la nuova moda",
+      "subtitle": "L'unico posto dove trovi solo brand emergenti",
+      "cta": "Esplora i Marchi"
+    },
+    "newIn": {
+      "title": "Novità",
+      "viewAll": "Vedi Tutto"
+    },
+    "trending": {
+      "title": "Prodotti di Tendenza",
+      "viewAll": "Vedi Tutti i Prodotti"
+    },
+    "discounts": {
+      "title": "Sconti",
+      "viewAll": "Vedi Tutti gli Sconti",
+      "save": "Risparmia"
+    },
+    "men": {
+      "title": "Uomo",
+      "viewAll": "Vedi Tutti i Prodotti Uomo"
+    },
+    "women": {
+      "title": "Donna",
+      "viewAll": "Vedi Tutti i Prodotti Donna"
+    },
+    "featured": {
+      "title": "Marchi in Evidenza",
+      "viewAll": "Vedi Tutti i Marchi"
+    },
+    "stats": {
+      "products": "Prodotti",
+      "brands": "Marchi",
+      "customers": "Clienti Felici"
+    }
+  },
+  "brands": {
+    "title": "I Nostri Marchi",
+    "subtitle": "Scopri i marchi di moda eco-consapevoli",
+    "viewProducts": "Vedi Prodotti",
+    "products": "Prodotti",
+    "profile": {
+      "story": {
+        "title": "Storia",
+        "comingSoon": "Storia in arrivo"
+      },
+      "filters": {
+        "search": "Cerca prodotti",
+        "category": "Categoria",
+        "size": "Taglia",
+        "color": "Colore",
+        "allCategories": "Tutte le Categorie",
+        "allSizes": "Tutte le Taglie",
+        "allColors": "Tutti i Colori",
+        "clearFilters": "Cancella Filtri"
+      }
+    }
+  },
+  "cart": {
+    "title": "Carrello",
+    "empty": "Il tuo carrello è vuoto",
+    "continueShopping": "Continua gli Acquisti",
+    "subtotal": "Subtotale",
+    "shipping": "Spedizione",
+    "total": "Totale",
+    "checkout": "Procedi al Checkout",
+    "remove": "Rimuovi"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "shippingInfo": "Informazioni di Spedizione",
+    "paymentInfo": "Informazioni di Pagamento",
+    "orderSummary": "Riepilogo Ordine",
+    "placeOrder": "Conferma Ordine",
+    "processing": "Elaborazione in corso...",
+    "fields": {
+      "fullName": "Nome Completo",
+      "email": "Email",
+      "address": "Indirizzo",
+      "city": "Città",
+      "zipCode": "CAP",
+      "country": "Paese",
+      "cardNumber": "Numero Carta",
+      "expiryDate": "Data di Scadenza",
+      "cvv": "CVV"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Bentornato",
+      "subtitle": "Accedi al tuo account",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Accedi",
+      "noAccount": "Non hai un account?",
+      "signupLink": "Registrati"
+    },
+    "signup": {
+      "title": "Crea Account",
+      "subtitle": "Unisciti alla nostra comunità di moda sostenibile",
+      "name": "Nome Completo",
+      "email": "Email",
+      "password": "Password",
+      "role": "Sono un",
+      "roleUser": "Cliente",
+      "roleBrand": "Marchio",
+      "submit": "Crea Account",
+      "hasAccount": "Hai già un account?",
+      "loginLink": "Accedi"
+    }
+  },
+  "product": {
+    "addToCart": "Aggiungi al Carrello",
+    "outOfStock": "Esaurito",
+    "inStock": "Disponibile",
+    "description": "Descrizione",
+    "details": "Dettagli",
+    "material": "Materiale",
+    "madeIn": "Prodotto In",
+    "care": "Istruzioni per la Cura",
+    "shipping": "Spedizione e Resi"
+  },
+  "products": {
+    "title": "Prodotti",
+    "filters": {
+      "sort": "Ordina",
+      "brand": "Brand",
+      "size": "Taglia",
+      "color": "Colore",
+      "price": "Prezzo",
+      "newIn": "Novità",
+      "material": "Materiale",
+      "allFilters": "Tutti i filtri",
+      "clearAll": "Cancella tutti i filtri",
+      "articles": "articoli"
+    },
+    "sortOptions": {
+      "newest": "Più recenti",
+      "priceAsc": "Prezzo: crescente",
+      "priceDesc": "Prezzo: decrescente",
+      "popular": "Più popolari"
+    },
+    "noProducts": "Nessun prodotto disponibile con questi filtri."
+  },
+  "admin": {
+    "title": "Dashboard Admin",
+    "users": "Utenti",
+    "brands": "Marchi",
+    "products": "Prodotti",
+    "orders": "Ordini",
+    "totalUsers": "Totale Utenti",
+    "totalBrands": "Totale Marchi",
+    "totalProducts": "Totale Prodotti",
+    "totalOrders": "Totale Ordini",
+    "heroSlides": {
+      "title": "Locandine Home",
+      "new": "Nuova Locandina",
+      "edit": "Modifica Locandina",
+      "fields": {
+        "image": "Immagine",
+        "title": "Titolo",
+        "subtitle": "Sottotitolo",
+        "position": "Posizione",
+        "startsAt": "Visibile Da",
+        "endsAt": "Visibile Fino A",
+        "isActive": "Attivo"
+      },
+      "status": {
+        "active": "Attivo",
+        "scheduled": "Programmato",
+        "expired": "Scaduto",
+        "inactive": "Inattivo"
+      }
+    }
+  },
+  "dashboard": {
+    "brand": {
+      "welcome": "Bentornato",
+      "setup": "Completa la Configurazione",
+      "products": "Prodotti",
+      "orders": "Ordini",
+      "profile": "Profilo",
+      "newProduct": "Nuovo Prodotto",
+      "editProduct": "Modifica Prodotto",
+      "title": "Dashboard Brand",
+      "subtitle": "Gestisci il tuo brand e monitora le performance",
+      "addNewProduct": "Aggiungi Nuovo Prodotto",
+      "stats": {
+        "followers": "Follower",
+        "totalFollowers": "Follower totali",
+        "products": "Prodotti",
+        "totalProducts": "Prodotti totali",
+        "reviews": "Recensioni",
+        "review": "recensione",
+        "reviewsPlural": "recensioni",
+        "totalRevenue": "Fatturato Totale",
+        "allTimeRevenue": "Fatturato complessivo",
+        "orders30d": "Ordini (30g)",
+        "last30Days": "Ultimi 30 giorni"
+      },
+      "quickActions": {
+        "title": "Azioni Rapide",
+        "addProduct": "Aggiungi Nuovo Prodotto",
+        "updateProfile": "Aggiorna Profilo Brand",
+        "viewAllProducts": "Visualizza Tutti i Prodotti",
+        "manageReviews": "Gestisci Recensioni"
+      },
+      "menu": {
+        "home": "Home",
+        "dashboard": "Dashboard",
+        "editProfile": "Modifica Profilo",
+        "manageProducts": "Gestisci Prodotti",
+        "reviews": "Recensioni",
+        "viewProfile": "Visualizza Profilo",
+        "analytics": "Analisi"
+      },
+      "analytics": {
+        "title": "Analisi",
+        "profileViews": "Visualizzazioni Profilo",
+        "sales": "Vendite",
+        "followers": "Follower",
+        "totalOrders": "Ordini Totali",
+        "topProducts": "Prodotti Più Venduti",
+        "lowStockProducts": "Prodotti con Scorte Basse",
+        "revenueOverTime": "Entrate nel Tempo",
+        "ordersOverTime": "Ordini nel Tempo",
+        "units": "unità",
+        "revenue": "Entrate",
+        "noData": "Nessun dato disponibile",
+        "thisMonth": "Questo Mese",
+        "lastMonth": "Mese Scorso",
+        "growth": "Crescita",
+        "decline": "Calo"
+      },
+      "story": {
+        "title": "Storia del Marchio",
+        "subtitle": "Racconta la storia del tuo marchio per connetterti con i clienti",
+        "storyTitle": "Titolo della Storia",
+        "storyTitlePlaceholder": "Inserisci un titolo accattivante per la tua storia",
+        "storyContent": "Contenuto della Storia",
+        "storyContentPlaceholder": "Condividi il viaggio, i valori e ciò che rende unico il tuo marchio...",
+        "storyImages": "Immagini della Storia",
+        "uploadStoryImages": "Carica immagini della storia (fino a 6)",
+        "maxImagesReached": "Massimo 6 immagini raggiunto",
+        "removeImage": "Rimuovi immagine"
+      }
+    },
+    "products": {
+      "form": {
+        "basicInfo": "Informazioni di Base",
+        "images": "Immagini",
+        "variantsStock": "Varianti e Stock",
+        "productName": "Nome Prodotto",
+        "productNamePlaceholder": "Inserisci il nome del prodotto",
+        "description": "Descrizione",
+        "descriptionPlaceholder": "Descrivi il tuo prodotto in dettaglio...",
+        "minChars": "caratteri minimi",
+        "category": "Categoria",
+        "selectCategory": "Seleziona una categoria",
+        "price": "Prezzo (€)",
+        "mainImage": "Immagine Principale",
+        "uploadMainImage": "Clicca o trascina per caricare l'immagine principale",
+        "imageFormats": "JPEG, PNG, WebP (max 5MB)",
+        "additionalImages": "Immagini Aggiuntive",
+        "uploadAdditionalImages": "Carica immagini aggiuntive (fino a 6)",
+        "maxImages": "Massimo 7 immagini consentite (1 principale + 6 aggiuntive)",
+        "maxImagesReached": "Massimo 7 immagini raggiunto",
+        "sizes": "Taglie Disponibili",
+        "colors": "Colori Disponibili",
+        "otherColor": "Aggiungi colore personalizzato",
+        "add": "Aggiungi",
+        "stockBySize": "Stock per Taglia",
+        "stockForSize": "Stock",
+        "priceForSize": "Prezzo",
+        "enterStockForSize": "Quantità",
+        "enterPriceForSize": "Prezzo (€)",
+        "stockQuantity": "Quantità in Stock",
+        "publishStatus": "Stato Pubblicazione",
+        "published": "Pubblicato",
+        "draft": "Bozza",
+        "launchSettings": "Impostazioni di Lancio",
+        "publishNow": "Pubblica immediatamente",
+        "scheduleLaunch": "Programma lancio",
+        "launchDate": "Data di Lancio",
+        "launchTime": "Ora di Lancio",
+        "material": "Materiale",
+        "selectMaterial": "Seleziona materiale",
+        "madeIn": "Prodotto In",
+        "selectCountry": "Seleziona paese",
+        "uploading": "Caricamento immagini...",
+        "saving": "Salvataggio...",
+        "saveChanges": "Salva Modifiche",
+        "createProduct": "Crea Prodotto"
+      },
+      "materials": {
+        "cotton": "Cotone",
+        "organic_cotton": "Cotone Biologico",
+        "wool": "Lana",
+        "cashmere": "Cashmere",
+        "linen": "Lino",
+        "silk": "Seta",
+        "hemp": "Canapa",
+        "bamboo": "Bambù",
+        "viscose": "Viscosa/Rayon",
+        "polyester": "Poliestere",
+        "nylon": "Nylon",
+        "elastane": "Elastan/Spandex",
+        "recycled": "Materiali Riciclati",
+        "mixed": "Misto",
+        "other": "Altro"
+      },
+      "countries": {
+        "italy": "Italia",
+        "france": "Francia",
+        "spain": "Spagna",
+        "portugal": "Portogallo",
+        "germany": "Germania",
+        "uk": "Regno Unito",
+        "usa": "Stati Uniti",
+        "turkey": "Turchia",
+        "morocco": "Marocco",
+        "tunisia": "Tunisia",
+        "india": "India",
+        "bangladesh": "Bangladesh",
+        "china": "Cina",
+        "vietnam": "Vietnam",
+        "romania": "Romania",
+        "poland": "Polonia",
+        "other": "Altro"
+      },
+      "errors": {
+        "nameRequired": "Il nome del prodotto è obbligatorio",
+        "descriptionRequired": "La descrizione è obbligatoria",
+        "descriptionTooShort": "La descrizione deve contenere almeno 20 caratteri",
+        "priceRequired": "È richiesto un prezzo valido",
+        "priceForSizeRequired": "Il prezzo è obbligatorio per la taglia {size}",
+        "categoryRequired": "Seleziona una categoria",
+        "sizesRequired": "Seleziona almeno una taglia",
+        "colorsRequired": "Seleziona almeno un colore",
+        "imageRequired": "L'immagine principale è obbligatoria",
+        "fixErrors": "Correggi gli errori prima di inviare",
+        "invalidSchedule": "Data e ora devono essere nel futuro",
+        "scheduleDateRequired": "La data di lancio è obbligatoria",
+        "scheduleTimeRequired": "L'ora di lancio è obbligatoria"
+      },
+      "categories": {
+        "tshirts": "Magliette",
+        "sweaters": "Maglioni",
+        "sweatshirts": "Felpe",
+        "hoodies": "Felpe con Cappuccio",
+        "shirts": "Camicie",
+        "pants": "Pantaloni",
+        "jeans": "Jeans",
+        "shorts": "Pantaloncini",
+        "dresses": "Abiti",
+        "skirts": "Gonne",
+        "jackets": "Giacche",
+        "coats": "Cappotti",
+        "activewear": "Abbigliamento Sportivo",
+        "accessories": "Accessori",
+        "shoes": "Scarpe",
+        "other": "Altro"
+      },
+      "messages": {
+        "createSuccess": "Prodotto creato con successo",
+        "updateSuccess": "Prodotto aggiornato con successo"
+      },
+      "scheduled": {
+        "title": "Prodotti Programmati",
+        "empty": "Nessun prodotto programmato",
+        "launchingOn": "In lancio il {date} alle {time}"
+      },
+      "actions": {
+        "publishNow": "Pubblica Ora",
+        "cancelSchedule": "Annulla Programmazione"
+      },
+      "badges": {
+        "scheduled": "Programmato per {date}"
+      }
+    }
+  },
+  "profile": {
+    "title": "Mio Profilo",
+    "tabs": {
+      "account": "I Miei Dati",
+      "orders": "I Miei Ordini",
+      "favorites": "Prodotti Preferiti",
+      "bugReport": "Segnala un Bug",
+      "giftCards": "Buoni Regalo",
+      "favoriteBrands": "Brand Preferiti"
+    },
+    "myData": {
+      "title": "I Miei Dati",
+      "name": "Nome",
+      "email": "Email",
+      "memberSince": "Membro Da",
+      "edit": "Modifica Profilo",
+      "save": "Salva Modifiche",
+      "cancel": "Annulla",
+      "updating": "Aggiornamento...",
+      "updateSuccess": "Profilo aggiornato con successo"
+    },
+    "myOrders": {
+      "title": "I Miei Ordini",
+      "empty": "Non hai ancora effettuato ordini",
+      "orderDate": "Data Ordine",
+      "total": "Totale",
+      "status": "Stato",
+      "details": "Dettagli",
+      "hideDetails": "Nascondi Dettagli",
+      "items": "Articoli",
+      "price": "Prezzo",
+      "quantity": "Quantità"
+    },
+    "favorites": {
+      "title": "Prodotti Preferiti",
+      "empty": "Non hai ancora aggiunto prodotti ai preferiti",
+      "emptySubtext": "Inizia ad esplorare i nostri prodotti e aggiungi i tuoi preferiti!"
+    },
+    "bugReport": {
+      "title": "Segnala un Bug",
+      "description": "Trovato un problema? Aiutaci a migliorare Viskory segnalando i bug.",
+      "button": "Segnala un Bug",
+      "subject": "Oggetto",
+      "description": "Descrizione",
+      "submit": "Invia Segnalazione",
+      "submitting": "Invio...",
+      "success": "Segnalazione inviata con successo. Grazie per il tuo feedback!",
+      "placeholderSubject": "Breve descrizione del problema",
+      "placeholderDescription": "Descrivi il bug nel dettaglio, cosa è successo e come riprodurlo..."
+    },
+    "giftCards": {
+      "title": "Buoni Regalo",
+      "comingSoon": "Disponibile a breve",
+      "description": "Potrai gestire i tuoi buoni regalo qui"
+    },
+    "favoriteBrands": {
+      "title": "Brand Preferiti",
+      "empty": "Non hai ancora seguito nessun brand",
+      "viewBrand": "Visualizza Brand",
+      "unfollow": "Smetti di Seguire"
+    }
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "success": "Successo",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "edit": "Modifica",
+    "delete": "Elimina",
+    "back": "Indietro",
+    "next": "Avanti",
+    "previous": "Precedente",
+    "search": "Cerca",
+    "filter": "Filtra",
+    "sort": "Ordina"
+  },
+  "footer": {
+    "tagline": "Marketplace dei Brand Emergenti",
+    "contact": "Contattaci",
+    "rights": "Tutti i diritti riservati"
+  },
+  "rankings": {
+    "title": "Classifica Brand",
+    "subtitle": "Top 20 brand in base alle performance recenti",
+    "rank": "Posizione",
+    "brand": "Brand",
+    "score": "Punteggio",
+    "reviews": "Recensioni",
+    "sales": "Vendite",
+    "avgRating": "Voto Medio",
+    "last30Days": "Ultimi 30 giorni",
+    "viewBrand": "Visualizza Brand",
+    "noData": "Nessun dato disponibile per la classifica"
+  }
+}

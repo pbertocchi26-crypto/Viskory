@@ -1,0 +1,492 @@
+{
+  "nav": {
+    "home": "Home",
+    "brands": "Brands",
+    "rankings": "Brand Rankings",
+    "cart": "Cart",
+    "login": "Login",
+    "signup": "Sign Up",
+    "admin": "Admin",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "editProfile": "Edit Profile",
+    "logout": "Logout"
+  },
+  "home": {
+    "hero": {
+      "title": "Discover New Fashion",
+      "subtitle": "The only place where you find only emerging brands",
+      "cta": "Explore Brands"
+    },
+    "newIn": {
+      "title": "New In",
+      "viewAll": "View All"
+    },
+    "trending": {
+      "title": "Trending Products",
+      "viewAll": "View All Products"
+    },
+    "discounts": {
+      "title": "Discounts",
+      "viewAll": "View All Discounts",
+      "save": "Save"
+    },
+    "men": {
+      "title": "Men",
+      "viewAll": "View All Men's Products"
+    },
+    "women": {
+      "title": "Women",
+      "viewAll": "View All Women's Products"
+    },
+    "featured": {
+      "title": "Featured Brands",
+      "viewAll": "View All Brands"
+    },
+    "stats": {
+      "products": "Products",
+      "brands": "Brands",
+      "customers": "Happy Customers"
+    }
+  },
+  "brands": {
+    "title": "Our Brands",
+    "subtitle": "Discover eco-conscious fashion brands",
+    "viewProducts": "View Products",
+    "products": "Products",
+    "profile": {
+      "story": {
+        "title": "Story",
+        "comingSoon": "Story coming soon"
+      },
+      "filters": {
+        "search": "Search products",
+        "category": "Category",
+        "size": "Size",
+        "color": "Color",
+        "allCategories": "All Categories",
+        "allSizes": "All Sizes",
+        "allColors": "All Colors",
+        "clearFilters": "Clear Filters"
+      }
+    }
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue Shopping",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "remove": "Remove"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "shippingInfo": "Shipping Information",
+    "paymentInfo": "Payment Information",
+    "orderSummary": "Order Summary",
+    "placeOrder": "Place Order",
+    "processing": "Processing...",
+    "fields": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "address": "Address",
+      "city": "City",
+      "zipCode": "ZIP Code",
+      "country": "Country",
+      "cardNumber": "Card Number",
+      "expiryDate": "Expiry Date",
+      "cvv": "CVV"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to your account",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign In",
+      "noAccount": "Don't have an account?",
+      "signupLink": "Sign up"
+    },
+    "signup": {
+      "title": "Create Account",
+      "subtitle": "Join our sustainable fashion community",
+      "name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "role": "I am a",
+      "roleUser": "Customer",
+      "roleBrand": "Brand",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Sign in"
+    }
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "inStock": "In Stock",
+    "description": "Description",
+    "details": "Details",
+    "material": "Material",
+    "madeIn": "Made In",
+    "care": "Care Instructions",
+    "shipping": "Shipping & Returns"
+  },
+  "products": {
+    "title": "Products",
+    "filters": {
+      "sort": "Sort",
+      "brand": "Brand",
+      "size": "Size",
+      "color": "Color",
+      "price": "Price",
+      "newIn": "New In",
+      "material": "Material",
+      "allFilters": "All filters",
+      "clearAll": "Clear all filters",
+      "articles": "articles"
+    },
+    "sortOptions": {
+      "newest": "Newest",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low",
+      "popular": "Most Popular"
+    },
+    "noProducts": "No products available with these filters."
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "users": "Users",
+    "brands": "Brands",
+    "products": "Products",
+    "orders": "Orders",
+    "totalUsers": "Total Users",
+    "totalBrands": "Total Brands",
+    "totalProducts": "Total Products",
+    "totalOrders": "Total Orders",
+    "heroSlides": {
+      "title": "Homepage Banners",
+      "new": "New Slide",
+      "edit": "Edit Slide",
+      "fields": {
+        "image": "Image",
+        "title": "Title",
+        "subtitle": "Subtitle",
+        "position": "Position",
+        "startsAt": "Visible From",
+        "endsAt": "Visible Until",
+        "isActive": "Active"
+      },
+      "status": {
+        "active": "Active",
+        "scheduled": "Scheduled",
+        "expired": "Expired",
+        "inactive": "Inactive"
+      }
+    }
+  },
+  "dashboard": {
+    "brand": {
+      "welcome": "Welcome back",
+      "setup": "Complete Setup",
+      "products": "Products",
+      "orders": "Orders",
+      "profile": "Profile",
+      "newProduct": "New Product",
+      "editProduct": "Edit Product",
+      "title": "Brand Dashboard",
+      "subtitle": "Manage your brand and track performance",
+      "addNewProduct": "Add New Product",
+      "stats": {
+        "followers": "Followers",
+        "totalFollowers": "Total followers",
+        "products": "Products",
+        "totalProducts": "Total products",
+        "reviews": "Reviews",
+        "review": "review",
+        "reviewsPlural": "reviews",
+        "totalRevenue": "Total Revenue",
+        "allTimeRevenue": "All-time revenue",
+        "orders30d": "Orders (30d)",
+        "last30Days": "Last 30 days"
+      },
+      "quickActions": {
+        "title": "Quick Actions",
+        "addProduct": "Add New Product",
+        "updateProfile": "Update Brand Profile",
+        "viewAllProducts": "View All Products",
+        "manageReviews": "Manage Reviews"
+      },
+      "menu": {
+        "home": "Home",
+        "dashboard": "Dashboard",
+        "editProfile": "Edit Profile",
+        "manageProducts": "Manage Products",
+        "reviews": "Reviews",
+        "viewProfile": "View Profile",
+        "analytics": "Analytics"
+      },
+      "analytics": {
+        "title": "Analytics",
+        "profileViews": "Profile Views",
+        "sales": "Sales",
+        "followers": "Followers",
+        "totalOrders": "Total Orders",
+        "topProducts": "Top Selling Products",
+        "lowStockProducts": "Low Stock Products",
+        "revenueOverTime": "Revenue Over Time",
+        "ordersOverTime": "Orders Over Time",
+        "units": "units",
+        "revenue": "Revenue",
+        "noData": "No data available",
+        "thisMonth": "This Month",
+        "lastMonth": "Last Month",
+        "growth": "Growth",
+        "decline": "Decline"
+      },
+      "story": {
+        "title": "Brand Story",
+        "subtitle": "Tell your brand's story to connect with customers",
+        "storyTitle": "Story Title",
+        "storyTitlePlaceholder": "Enter a catchy title for your story",
+        "storyContent": "Story Content",
+        "storyContentPlaceholder": "Share your brand's journey, values, and what makes you unique...",
+        "storyImages": "Story Images",
+        "uploadStoryImages": "Upload story images (up to 6)",
+        "maxImagesReached": "Maximum 6 images reached",
+        "removeImage": "Remove image"
+      }
+    },
+    "products": {
+      "form": {
+        "basicInfo": "Basic Information",
+        "images": "Images",
+        "variantsStock": "Variants & Stock",
+        "productName": "Product Name",
+        "productNamePlaceholder": "Enter product name",
+        "description": "Description",
+        "descriptionPlaceholder": "Describe your product in detail...",
+        "minChars": "minimum characters",
+        "category": "Category",
+        "selectCategory": "Select a category",
+        "price": "Price (€)",
+        "mainImage": "Main Image",
+        "uploadMainImage": "Click or drag to upload main image",
+        "imageFormats": "JPEG, PNG, WebP (max 5MB)",
+        "additionalImages": "Additional Images",
+        "uploadAdditionalImages": "Upload additional images (up to 6)",
+        "maxImages": "Maximum 7 images allowed (1 main + 6 additional)",
+        "maxImagesReached": "Maximum 7 images reached",
+        "sizes": "Available Sizes",
+        "colors": "Available Colors",
+        "otherColor": "Add custom color",
+        "add": "Add",
+        "stockBySize": "Stock by Size",
+        "stockForSize": "Stock",
+        "priceForSize": "Price",
+        "enterStockForSize": "Stock qty",
+        "enterPriceForSize": "Price (€)",
+        "stockQuantity": "Stock Quantity",
+        "publishStatus": "Publish Status",
+        "published": "Published",
+        "draft": "Draft",
+        "launchSettings": "Launch Settings",
+        "publishNow": "Publish immediately",
+        "scheduleLaunch": "Schedule launch",
+        "launchDate": "Launch Date",
+        "launchTime": "Launch Time",
+        "material": "Material",
+        "selectMaterial": "Select material",
+        "madeIn": "Made In",
+        "selectCountry": "Select country",
+        "uploading": "Uploading images...",
+        "saving": "Saving...",
+        "saveChanges": "Save Changes",
+        "createProduct": "Create Product"
+      },
+      "materials": {
+        "cotton": "Cotton",
+        "organic_cotton": "Organic Cotton",
+        "wool": "Wool",
+        "cashmere": "Cashmere",
+        "linen": "Linen",
+        "silk": "Silk",
+        "hemp": "Hemp",
+        "bamboo": "Bamboo",
+        "viscose": "Viscose/Rayon",
+        "polyester": "Polyester",
+        "nylon": "Nylon",
+        "elastane": "Elastane/Spandex",
+        "recycled": "Recycled Materials",
+        "mixed": "Mixed/Blend",
+        "other": "Other"
+      },
+      "countries": {
+        "italy": "Italy",
+        "france": "France",
+        "spain": "Spain",
+        "portugal": "Portugal",
+        "germany": "Germany",
+        "uk": "United Kingdom",
+        "usa": "United States",
+        "turkey": "Turkey",
+        "morocco": "Morocco",
+        "tunisia": "Tunisia",
+        "india": "India",
+        "bangladesh": "Bangladesh",
+        "china": "China",
+        "vietnam": "Vietnam",
+        "romania": "Romania",
+        "poland": "Poland",
+        "other": "Other"
+      },
+      "errors": {
+        "nameRequired": "Product name is required",
+        "descriptionRequired": "Description is required",
+        "descriptionTooShort": "Description must be at least 20 characters",
+        "priceRequired": "Valid price is required",
+        "priceForSizeRequired": "Price is required for size {size}",
+        "categoryRequired": "Please select a category",
+        "sizesRequired": "Please select at least one size",
+        "colorsRequired": "Please select at least one color",
+        "imageRequired": "Main image is required",
+        "fixErrors": "Please fix the errors before submitting",
+        "invalidSchedule": "Schedule date and time must be in the future",
+        "scheduleDateRequired": "Launch date is required",
+        "scheduleTimeRequired": "Launch time is required"
+      },
+      "categories": {
+        "tshirts": "T-Shirts",
+        "sweaters": "Sweaters",
+        "sweatshirts": "Sweatshirts",
+        "hoodies": "Hoodies",
+        "shirts": "Shirts",
+        "pants": "Pants",
+        "jeans": "Jeans",
+        "shorts": "Shorts",
+        "dresses": "Dresses",
+        "skirts": "Skirts",
+        "jackets": "Jackets",
+        "coats": "Coats",
+        "activewear": "Activewear",
+        "accessories": "Accessories",
+        "shoes": "Shoes",
+        "other": "Other"
+      },
+      "messages": {
+        "createSuccess": "Product created successfully",
+        "updateSuccess": "Product updated successfully"
+      },
+      "scheduled": {
+        "title": "Scheduled Products",
+        "empty": "No scheduled products",
+        "launchingOn": "Launching on {date} at {time}"
+      },
+      "actions": {
+        "publishNow": "Publish Now",
+        "cancelSchedule": "Cancel Schedule"
+      },
+      "badges": {
+        "scheduled": "Scheduled for {date}"
+      }
+    }
+  },
+  "profile": {
+    "title": "My Profile",
+    "tabs": {
+      "account": "My Data",
+      "orders": "My Orders",
+      "favorites": "Favourite Products",
+      "bugReport": "Report a Bug",
+      "giftCards": "Gift Cards",
+      "favoriteBrands": "Favourite Brands"
+    },
+    "myData": {
+      "title": "My Data",
+      "name": "Name",
+      "email": "Email",
+      "memberSince": "Member Since",
+      "edit": "Edit Profile",
+      "save": "Save Changes",
+      "cancel": "Cancel",
+      "updating": "Updating...",
+      "updateSuccess": "Profile updated successfully"
+    },
+    "myOrders": {
+      "title": "My Orders",
+      "empty": "You haven't placed any orders yet",
+      "orderDate": "Order Date",
+      "total": "Total",
+      "status": "Status",
+      "details": "Details",
+      "hideDetails": "Hide Details",
+      "items": "Items",
+      "price": "Price",
+      "quantity": "Quantity"
+    },
+    "favorites": {
+      "title": "Favourite Products",
+      "empty": "You haven't added any favourites yet",
+      "emptySubtext": "Start exploring our products and add your favourites!"
+    },
+    "bugReport": {
+      "title": "Report a Bug",
+      "description": "Found an issue? Help us improve Viskory by reporting bugs and issues.",
+      "button": "Report a Bug",
+      "subject": "Subject",
+      "description": "Description",
+      "submit": "Submit Report",
+      "submitting": "Submitting...",
+      "success": "Bug report submitted successfully. Thank you for your feedback!",
+      "placeholderSubject": "Brief description of the issue",
+      "placeholderDescription": "Describe the bug in detail, what happened, and how to reproduce it..."
+    },
+    "giftCards": {
+      "title": "Gift Cards",
+      "comingSoon": "Coming soon",
+      "description": "You'll be able to manage your gift cards here"
+    },
+    "favoriteBrands": {
+      "title": "Favourite Brands",
+      "empty": "You haven't followed any brands yet",
+      "viewBrand": "View Brand",
+      "unfollow": "Unfollow"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort"
+  },
+  "footer": {
+    "tagline": "Emerging Brands Marketplace",
+    "contact": "Contact us",
+    "rights": "All rights reserved"
+  },
+  "rankings": {
+    "title": "Brand Rankings",
+    "subtitle": "Top 20 brands based on recent performance",
+    "rank": "Rank",
+    "brand": "Brand",
+    "score": "Score",
+    "reviews": "Reviews",
+    "sales": "Sales",
+    "avgRating": "Avg Rating",
+    "last30Days": "Last 30 days",
+    "viewBrand": "View Brand",
+    "noData": "No ranking data available yet"
+  }
+}

@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --text: #090a07;
+    --background: 251 11% 98%;
+    --foreground: 80 15% 3%;
+    --card: 251 11% 98%;
+    --card-foreground: 80 15% 3%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 80 15% 3%;
+    --primary: 75 13% 53%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 120 14% 75%;
+    --secondary-foreground: 80 15% 3%;
+    --muted: 120 10% 88%;
+    --muted-foreground: 80 5% 40%;
+    --accent: 132 13% 63%;
+    --accent-foreground: 80 15% 3%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 120 10% 88%;
+    --input: 120 10% 88%;
+    --ring: 75 13% 53%;
+    --chart-1: 75 13% 53%;
+    --chart-2: 120 14% 75%;
+    --chart-3: 132 13% 63%;
+    --chart-4: 85 20% 65%;
+    --chart-5: 100 18% 58%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 80 15% 8%;
+    --foreground: 251 11% 98%;
+    --card: 80 15% 8%;
+    --card-foreground: 251 11% 98%;
+    --popover: 80 15% 8%;
+    --popover-foreground: 251 11% 98%;
+    --primary: 75 13% 53%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 120 14% 35%;
+    --secondary-foreground: 251 11% 98%;
+    --muted: 120 10% 20%;
+    --muted-foreground: 120 5% 65%;
+    --accent: 132 13% 43%;
+    --accent-foreground: 251 11% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 120 10% 20%;
+    --input: 120 10% 20%;
+    --ring: 75 13% 53%;
+    --chart-1: 75 13% 53%;
+    --chart-2: 120 14% 75%;
+    --chart-3: 132 13% 63%;
+    --chart-4: 85 20% 65%;
+    --chart-5: 100 18% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+  }
+}
