@@ -44,7 +44,7 @@ export async function signUp(
 
     // Create user record in our users table
     const { data: userData, error: userError } = await supabase
-      .from('users')
+      .from('profiles')
       .insert([
         {
           id: authData.user.id,
@@ -93,7 +93,7 @@ export async function signIn(
 
     // Fetch user data from our users table
     const { data: userData, error: userError } = await supabase
-      .from('users')
+      .from('profiles')
       .select('*')
       .eq('id', authData.user.id)
       .maybeSingle();
@@ -104,7 +104,7 @@ export async function signIn(
 
     // Update last sign in
     await supabase
-      .from('users')
+      .from('profiles')
       .update({ last_sign_in_at: new Date().toISOString() })
       .eq('id', userData.id);
 
@@ -152,7 +152,7 @@ export async function getCurrentUser(): Promise<User | null> {
 
     // Fetch user data from our users table
     const { data: userData, error } = await supabase
-      .from('users')
+      .from('profiles')
       .select('*')
       .eq('id', session.user.id)
       .maybeSingle();
@@ -180,7 +180,7 @@ export async function handleOAuthCallback(): Promise<{ user: User | null; error:
 
     // Check if user record exists
     const { data: existingUser } = await supabase
-      .from('users')
+      .from('profiles')
       .select('*')
       .eq('id', authUser.id)
       .maybeSingle();
@@ -188,7 +188,7 @@ export async function handleOAuthCallback(): Promise<{ user: User | null; error:
     if (existingUser) {
       // Update last sign in
       await supabase
-        .from('users')
+        .from('profiles')
         .update({ last_sign_in_at: new Date().toISOString() })
         .eq('id', existingUser.id);
 
@@ -198,7 +198,7 @@ export async function handleOAuthCallback(): Promise<{ user: User | null; error:
     // Create new user record for OAuth user
     const provider = authUser.app_metadata.provider as AuthProvider || 'email';
     const { data: newUser, error: createError } = await supabase
-      .from('users')
+      .from('profiles')
       .insert([
         {
           id: authUser.id,
@@ -234,7 +234,7 @@ export function onAuthStateChange(callback: (user: User | null) => void) {
   return supabase.auth.onAuthStateChange(async (event, session) => {
     if (session?.user) {
       const { data: userData } = await supabase
-        .from('users')
+        .from('profiles')
         .select('*')
         .eq('id', session.user.id)
         .maybeSingle();
