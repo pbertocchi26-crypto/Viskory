@@ -37,7 +37,7 @@ export default function AdminUsersPage() {
 
   const loadUsers = async () => {
     const { data } = await supabase
-      .from('users')
+      .from('profiles')
       .select('*')
       .order('created_at', { ascending: false });
 
