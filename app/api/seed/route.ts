@@ -75,8 +75,6 @@ export async function POST() {
       },
     ];
 
-    await supabase.from('profiles').insert(regularUsers);
-
     const brands = [
       {
         owner_user_id: insertedBrandOwners![0].id,
