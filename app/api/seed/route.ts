@@ -50,7 +50,7 @@ export async function POST() {
     ];
 
     const { data: insertedBrandOwners } = await supabase
-      .from('users')
+      .from('profiles')
       .insert(brandOwners)
       .select();
 
