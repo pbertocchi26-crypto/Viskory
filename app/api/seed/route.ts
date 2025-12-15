@@ -75,7 +75,7 @@ export async function POST() {
       },
     ];
 
-    await supabase.from('users').insert(regularUsers);
+    await supabase.from('profiles').insert(regularUsers);
 
     const brands = [
       {
