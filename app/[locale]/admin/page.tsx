@@ -47,7 +47,7 @@ export default function AdminDashboardPage() {
 
   const loadStats = async () => {
     const { count: usersCount } = await supabase
-      .from('users')
+      .from('profiles')
       .select('*', { count: 'exact', head: true });
 
     const { count: brandsCount } = await supabase
