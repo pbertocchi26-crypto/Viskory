@@ -478,7 +478,7 @@ export async function POST() {
     ];
 
     const { data: insertedRegularUsers } = await supabase
-      .from('users')
+      .from('profiles')
       .select('id, email')
       .in('email', regularUsers.map(u => u.email));
 
