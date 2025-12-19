@@ -263,7 +263,7 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
     if (!user) {
       toast({
         title: 'Login required',
-        description: 'Please login to follow brands',
+        full_description: 'Please login to follow brands',
         variant: 'destructive',
       });
       return;
