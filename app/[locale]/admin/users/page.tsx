@@ -63,7 +63,7 @@ export default function AdminUsersPage() {
     } else {
       toast({
         title: 'Success',
-        description: 'User role updated successfully',
+        full_description: 'User role updated successfully',
       });
       setUsers(users.map((u) => (u.id === userId ? { ...u, role: newRole } : u)));
     }
