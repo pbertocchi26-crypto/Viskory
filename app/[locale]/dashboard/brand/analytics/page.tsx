@@ -348,7 +348,7 @@ export default function AnalyticsPage() {
       icon: ExternalLink,
       color: 'text-pink-600',
       bgColor: 'bg-pink-50',
-      description: 'Visualizzazioni che diventano click'
+      full_description: 'Visualizzazioni che diventano click'
     }
   ];
 
