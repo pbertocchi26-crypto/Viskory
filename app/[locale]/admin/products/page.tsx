@@ -85,7 +85,7 @@ export default function AdminProductsPage() {
     if (error) {
       toast({
         title: 'Error',
-        description: error.message,
+        full_description: error.message,
         variant: 'destructive',
       });
     } else {
