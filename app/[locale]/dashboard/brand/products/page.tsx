@@ -132,7 +132,7 @@ export default function ProductsManagementPage() {
     if (error) {
       toast({
         title: t('common.error'),
-        description: error.message,
+        full_description: error.message,
         variant: 'destructive',
       });
     } else {
