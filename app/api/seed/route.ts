@@ -10,17 +10,6 @@ export async function POST() {
     const userPassword = await bcrypt.hash('password123', 10);
 
     const { data: adminUser } = await supabase
-      .from('profiles')
-      .insert([
-        {
-          name: 'Admin User',
-          email: 'admin@vesty.com',
-          password_hash: adminPassword,
-          role: 'ADMIN',
-        },
-      ])
-      .select()
-      .single();
 
     const brandOwners = [
       {
