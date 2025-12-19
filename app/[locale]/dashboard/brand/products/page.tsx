@@ -109,7 +109,7 @@ export default function ProductsManagementPage() {
     } else {
       toast({
         title: t('common.success'),
-        description: 'Product deleted successfully',
+        full_description: 'Product deleted successfully',
       });
       setProducts(products.filter((p) => p.id !== productId));
       setScheduledProducts(scheduledProducts.filter((p) => p.id !== productId));
