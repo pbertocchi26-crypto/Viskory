@@ -89,7 +89,7 @@ export default function AdminBrandsPage() {
     } else {
       toast({
         title: 'Success',
-        description: `Brand ${!currentStatus ? 'featured' : 'unfeatured'}`,
+        full_description: `Brand ${!currentStatus ? 'featured' : 'unfeatured'}`,
       });
       setBrands(
         brands.map((b) =>
