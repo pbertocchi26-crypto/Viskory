@@ -186,7 +186,7 @@ export default function ProductsManagementPage() {
     } else {
       toast({
         title: t('common.success'),
-        description: 'Schedule cancelled',
+        full_description: 'Schedule cancelled',
       });
       loadProducts();
     }
