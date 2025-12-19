@@ -103,7 +103,7 @@ export default function AdminHeroSlidesPage() {
     if (error) {
       toast({
         title: 'Error',
-        description: 'Failed to update slide',
+        full_description: 'Failed to update slide',
         variant: 'destructive',
       });
     } else {
