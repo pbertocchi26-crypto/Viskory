@@ -132,7 +132,7 @@ export default function AdminHeroSlidesPage() {
     } else {
       toast({
         title: 'Success',
-        description: 'Slide deleted successfully',
+        full_description: 'Slide deleted successfully',
       });
       loadSlides();
     }
