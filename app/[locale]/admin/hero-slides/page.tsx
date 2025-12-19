@@ -109,7 +109,7 @@ export default function AdminHeroSlidesPage() {
     } else {
       toast({
         title: 'Success',
-        description: 'Slide updated successfully',
+        full_description: 'Slide updated successfully',
       });
       loadSlides();
     }
