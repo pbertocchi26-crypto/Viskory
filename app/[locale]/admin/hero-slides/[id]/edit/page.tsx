@@ -38,7 +38,7 @@ export default function EditHeroSlidePage({ params }: { params: { id: string } }
     if (error || !data) {
       toast({
         title: 'Error',
-        description: 'Slide not found',
+        full_description: 'Slide not found',
         variant: 'destructive',
       });
       router.push(`/${locale}/admin/hero-slides`);
