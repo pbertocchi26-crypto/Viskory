@@ -138,7 +138,7 @@ export default function ProductsManagementPage() {
     } else {
       toast({
         title: t('common.success'),
-        description: `Product ${!currentStatus ? 'published' : 'unpublished'}`,
+        full_description: `Product ${!currentStatus ? 'published' : 'unpublished'}`,
       });
       loadProducts();
     }
