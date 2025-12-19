@@ -163,7 +163,7 @@ export default function ProductsManagementPage() {
     } else {
       toast({
         title: t('common.success'),
-        description: 'Product published successfully',
+        full_description: 'Product published successfully',
       });
       loadProducts();
     }
