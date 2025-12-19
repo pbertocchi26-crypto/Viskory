@@ -282,7 +282,7 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
         setIsFollowing(false);
         toast({
           title: 'Unfollowed',
-          description: `You unfollowed ${brand.name}`,
+          full_description: `You unfollowed ${brand.name}`,
         });
       }
     } else {
