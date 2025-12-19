@@ -15,16 +15,6 @@ export async function GET() {
     }
 
     const { data: brandUser, error: brandUserError } = await supabase
-      .from('profiles')
-      .insert({
-        name: 'Marco Rossi',
-        email: 'brand@viskory.com',
-        password_hash: brandPassword,
-        role: 'BRAND',
-        avatar_url: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=200'
-      })
-      .select()
-      .single();
 
     if (brandUserError) {
       console.error('Brand user creation error:', brandUserError);
