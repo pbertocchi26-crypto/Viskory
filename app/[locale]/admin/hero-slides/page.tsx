@@ -65,7 +65,7 @@ export default function AdminHeroSlidesPage() {
     if (error) {
       toast({
         title: 'Error',
-        description: 'Failed to load slides',
+        full_description: 'Failed to load slides',
         variant: 'destructive',
       });
     } else {
