@@ -91,7 +91,7 @@ export default function AdminProductsPage() {
     } else {
       toast({
         title: 'Success',
-        description: 'Product deleted',
+        full_description: 'Product deleted',
       });
       setProducts(products.filter((p) => p.id !== productId));
     }
