@@ -308,7 +308,7 @@ export default function AnalyticsPage() {
       icon: Eye,
       color: 'text-blue-600',
       bgColor: 'bg-blue-50',
-      description: 'Visite alle pagine dei tuoi prodotti'
+      full_description: 'Visite alle pagine dei tuoi prodotti'
     },
     {
       title: 'Click esterni',
