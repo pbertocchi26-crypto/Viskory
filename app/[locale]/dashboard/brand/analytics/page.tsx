@@ -316,7 +316,7 @@ export default function AnalyticsPage() {
       icon: MousePointer,
       color: 'text-green-600',
       bgColor: 'bg-green-50',
-      description: 'Click verso il tuo sito'
+      full_description: 'Click verso il tuo sito'
     },
     {
       title: 'Vendite sincronizzate',
