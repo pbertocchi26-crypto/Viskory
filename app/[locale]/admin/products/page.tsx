@@ -67,7 +67,7 @@ export default function AdminProductsPage() {
     } else {
       toast({
         title: 'Success',
-        description: `Product ${!currentStatus ? 'published' : 'unpublished'}`,
+        full_description: `Product ${!currentStatus ? 'published' : 'unpublished'}`,
       });
       setProducts(
         products.map((p) =>
