@@ -340,7 +340,7 @@ export default function AnalyticsPage() {
       icon: TrendingUp,
       color: 'text-indigo-600',
       bgColor: 'bg-indigo-50',
-      description: 'Click che diventano vendite'
+      full_description: 'Click che diventano vendite'
     },
     {
       title: 'Click-Through Rate',
