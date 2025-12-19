@@ -114,7 +114,7 @@ export default function BrandProfilePage() {
 
         toast({
           title: 'Success',
-          description: 'Brand profile created successfully',
+          full_description: 'Brand profile created successfully',
         });
       } else {
         const { error } = await supabase
