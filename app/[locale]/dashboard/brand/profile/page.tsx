@@ -126,7 +126,7 @@ export default function BrandProfilePage() {
 
         toast({
           title: 'Success',
-          description: 'Brand profile updated successfully',
+          full_description: 'Brand profile updated successfully',
         });
       }
 
