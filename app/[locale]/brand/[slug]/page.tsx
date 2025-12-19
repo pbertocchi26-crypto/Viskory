@@ -294,7 +294,7 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
         setIsFollowing(true);
         toast({
           title: 'Following',
-          description: `You are now following ${brand.name}`,
+          full_description: `You are now following ${brand.name}`,
         });
       }
     }
