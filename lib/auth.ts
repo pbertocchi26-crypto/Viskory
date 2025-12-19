@@ -42,13 +42,16 @@ export async function signUp(
       return { user: null, error: 'Failed to create user' };
     }
 
-    // Create user record in our users table
+    // Fetch the profile that should already exist
     const { data: userData, error: userError } = await supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', authData.user.id)
+      .maybeSingle();
 
-    if (userError) {
-      // If user creation fails, try to clean up auth user (best effort)
+    if (userError || !userData) {
       await supabase.auth.signOut();
-      return { user: null, error: userError.message };
+      return { user: null, error: 'Profile not found. Please contact support.' };
     }
 
     return { user: userData, error: null };
@@ -181,30 +184,8 @@ export async function handleOAuthCallback(): Promise<{ user: User | null; error:
       return { user: existingUser, error: null };
     }
 
-    // Create new user record for OAuth user
-    const provider = authUser.app_metadata.provider as AuthProvider || 'email';
-    const { data: newUser, error: createError } = await supabase
-      .from('profiles')
-      .insert([
-        {
-          id: authUser.id,
-          email: authUser.email!,
-          name: authUser.user_metadata?.full_name || authUser.user_metadata?.name || authUser.email?.split('@')[0] || 'User',
-          role: 'USER',
-          provider,
-          provider_id: authUser.user_metadata?.provider_id,
-          email_verified: authUser.email_confirmed_at !== null,
-          avatar_url: authUser.user_metadata?.avatar_url || authUser.user_metadata?.picture,
-        },
-      ])
-      .select()
-      .single();
-
-    if (createError) {
-      return { user: null, error: createError.message };
-    }
-
-    return { user: newUser, error: null };
+    // Profile should already exist - if not, user needs to contact support
+    return { user: null, error: 'Profile not found. Please contact support.' };
   } catch (error: any) {
     return { user: null, error: error.message };
   }
