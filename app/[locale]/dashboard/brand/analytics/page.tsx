@@ -324,7 +324,7 @@ export default function AnalyticsPage() {
       icon: ShoppingCart,
       color: 'text-purple-600',
       bgColor: 'bg-purple-50',
-      description: 'Vendite dal tuo sito'
+      full_description: 'Vendite dal tuo sito'
     },
     {
       title: 'Fatturato totale',
