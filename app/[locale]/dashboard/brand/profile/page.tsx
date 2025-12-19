@@ -96,7 +96,7 @@ export default function BrandProfilePage() {
         if (existingSlug) {
           toast({
             title: 'Error',
-            description: 'This slug is already taken',
+            full_description: 'This slug is already taken',
             variant: 'destructive',
           });
           setLoading(false);
