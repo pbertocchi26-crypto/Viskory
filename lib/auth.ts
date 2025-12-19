@@ -44,20 +44,6 @@ export async function signUp(
 
     // Create user record in our users table
     const { data: userData, error: userError } = await supabase
-      .from('profiles')
-      .insert([
-        {
-          id: authData.user.id,
-          email,
-          name,
-          role,
-          provider: 'email',
-          email_verified: false,
-          avatar_url: authData.user.user_metadata?.avatar_url,
-        },
-      ])
-      .select()
-      .single();
 
     if (userError) {
       // If user creation fails, try to clean up auth user (best effort)
