@@ -126,7 +126,7 @@ export default function AdminHeroSlidesPage() {
     if (error) {
       toast({
         title: 'Error',
-        description: 'Failed to delete slide',
+        full_description: 'Failed to delete slide',
         variant: 'destructive',
       });
     } else {
