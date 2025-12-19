@@ -332,7 +332,7 @@ export default function AnalyticsPage() {
       icon: DollarSign,
       color: 'text-orange-600',
       bgColor: 'bg-orange-50',
-      description: 'Dalle vendite sincronizzate'
+      full_description: 'Dalle vendite sincronizzate'
     },
     {
       title: 'Tasso di conversione',
