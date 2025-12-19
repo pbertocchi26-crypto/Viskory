@@ -68,7 +68,7 @@ export default function AdminBrandsPage() {
     } else {
       toast({
         title: 'Success',
-        description: 'Brand status updated',
+        full_description: 'Brand status updated',
       });
       setBrands(brands.map((b) => (b.id === brandId ? { ...b, status: newStatus } : b)));
     }
