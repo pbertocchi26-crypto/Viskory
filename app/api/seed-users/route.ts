@@ -8,16 +8,6 @@ export async function GET() {
     const brandPassword = await bcrypt.hash('brand123', 10);
 
     const { data: adminUser, error: adminError } = await supabase
-      .from('profiles')
-      .insert({
-        name: 'Admin Viskory',
-        email: 'admin@viskory.com',
-        password_hash: adminPassword,
-        role: 'ADMIN',
-        avatar_url: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200'
-      })
-      .select()
-      .single();
 
     if (adminError) {
       console.error('Admin creation error:', adminError);
