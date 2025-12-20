@@ -17,7 +17,7 @@ interface Product {
   price: string;
   is_published: boolean;
   brands: {
-    name: string;
+    brand_name: string;
     slug: string;
   };
 }
@@ -41,7 +41,7 @@ export default function AdminProductsPage() {
   const loadProducts = async () => {
     const { data } = await supabase
       .from('products')
-      .select('*, brands!inner(name, slug)')
+      .select('*, brands!inner(brand_name, slug)')
       .order('created_at', { ascending: false })
       .limit(100);
 
@@ -154,7 +154,7 @@ export default function AdminProductsPage() {
                           href={`/brand/${product.brands.slug}`}
                           className="text-sm text-gray-600 hover:underline"
                         >
-                          {product.brands.name}
+                          {product.brands.brand_name}
                         </Link>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">

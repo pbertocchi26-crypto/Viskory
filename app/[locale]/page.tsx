@@ -99,14 +99,14 @@ export default function Home() {
 
         const { data: searchBasedProducts } = await supabase
           .from('products')
-          .select('*, brands!inner(name)')
+          .select('*, brands!inner(brand_name)')
           .eq('is_published', true)
           .order('created_at', { ascending: false })
           .limit(50);
 
         const filtered = (searchBasedProducts || []).filter(product => {
           const productName = product.name.toLowerCase();
-          const brandName = product.brands?.name?.toLowerCase() || '';
+          const brandName = product.brands?.brand_name?.toLowerCase() || '';
           const category = product.category?.toLowerCase() || '';
 
           return searchTerms.some(term =>
@@ -198,7 +198,7 @@ export default function Home() {
                       name={product.name}
                       price={parseFloat(product.price)}
                       mainImageUrl={product.main_image_url}
-                      brandName={product.brands?.name}
+                      brandName={product.brands?.brand_name}
                       discountPercentage={product.discount_percentage}
                     />
                   </div>
@@ -231,7 +231,7 @@ export default function Home() {
                       name={product.name}
                       price={parseFloat(product.price)}
                       mainImageUrl={product.main_image_url}
-                      brandName={product.brands?.name}
+                      brandName={product.brands?.brand_name}
                       discountPercentage={product.discount_percentage}
                     />
                   </div>
@@ -296,7 +296,7 @@ export default function Home() {
                       name={product.name}
                       price={parseFloat(product.price)}
                       mainImageUrl={product.main_image_url}
-                      brandName={product.brands?.name}
+                      brandName={product.brands?.brand_name}
                       discountPercentage={product.discount_percentage}
                     />
                   </div>
@@ -329,7 +329,7 @@ export default function Home() {
                       name={product.name}
                       price={parseFloat(product.price)}
                       mainImageUrl={product.main_image_url}
-                      brandName={product.brands?.name}
+                      brandName={product.brands?.brand_name}
                       discountPercentage={product.discount_percentage}
                     />
                   </div>

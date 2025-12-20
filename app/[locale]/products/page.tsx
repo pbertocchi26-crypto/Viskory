@@ -95,8 +95,8 @@ async function getBrands() {
   const supabase = createServerClient();
   const { data: brands } = await supabase
     .from('brands')
-    .select('id, name')
-    .order('name');
+    .select('id, brand_name')
+    .order('brand_name');
 
   return brands || [];
 }
@@ -182,7 +182,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
                       name={product.name}
                       price={parseFloat(product.price)}
                       mainImageUrl={product.main_image_url}
-                      brandName={product.brands?.name}
+                      brandName={product.brands?.brand_name}
                       discountPercentage={product.discount_percentage}
                     />
                   ))}

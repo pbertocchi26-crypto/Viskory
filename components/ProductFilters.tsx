@@ -16,7 +16,7 @@ import { useState } from 'react';
 
 interface ProductFiltersProps {
   totalProducts: number;
-  brands?: Array<{ id: string; name: string }>;
+  brands?: Array<{ id: string; brand_name: string }>;
 }
 
 export function ProductFilters({ totalProducts, brands = [] }: ProductFiltersProps) {
@@ -164,7 +164,7 @@ export function ProductFilters({ totalProducts, brands = [] }: ProductFiltersPro
                           onChange={(e) => updateFilter('brand', e.target.value)}
                           className="w-4 h-4"
                         />
-                        <span className="text-sm">{brand.name}</span>
+                        <span className="text-sm">{brand.brand_name}</span>
                       </label>
                     ))}
                   </div>
@@ -324,7 +324,7 @@ export function ProductFilters({ totalProducts, brands = [] }: ProductFiltersPro
             <SelectContent>
               {brands.map((brand) => (
                 <SelectItem key={brand.id} value={brand.id}>
-                  {brand.name}
+                  {brand.brand_name}
                 </SelectItem>
               ))}
             </SelectContent>

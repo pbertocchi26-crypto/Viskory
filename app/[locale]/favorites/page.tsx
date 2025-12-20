@@ -15,7 +15,7 @@ interface Product {
   main_image_url?: string;
   discount_percentage?: number;
   brands: {
-    name: string;
+    brand_name: string;
   };
 }
 
@@ -107,7 +107,7 @@ export default function FavoritesPage() {
                   name={product.name}
                   price={parseFloat(product.price)}
                   mainImageUrl={product.main_image_url}
-                  brandName={product.brands?.name}
+                  brandName={product.brands?.brand_name}
                   discountPercentage={product.discount_percentage}
                 />
               ))}
