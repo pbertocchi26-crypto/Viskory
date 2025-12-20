@@ -71,7 +71,7 @@ CREATE POLICY "Brands can view their product clicks"
   TO authenticated
   USING (
     brand_id IN (
-      SELECT id FROM brands WHERE owner_user_id = (select auth.uid())
+      SELECT id FROM brands WHERE owner_id = (select auth.uid())
     )
   );
 
@@ -82,7 +82,7 @@ CREATE POLICY "Brands can view their sales"
   TO authenticated
   USING (
     brand_id IN (
-      SELECT id FROM brands WHERE owner_user_id = (select auth.uid())
+      SELECT id FROM brands WHERE owner_id = (select auth.uid())
     )
   );
 
@@ -93,7 +93,7 @@ CREATE POLICY "Brands can view their webhook token"
   TO authenticated
   USING (
     brand_id IN (
-      SELECT id FROM brands WHERE owner_user_id = (select auth.uid())
+      SELECT id FROM brands WHERE owner_id = (select auth.uid())
     )
   );
 
@@ -104,7 +104,7 @@ CREATE POLICY "Brands can view their product views"
   TO authenticated
   USING (
     brand_id IN (
-      SELECT id FROM brands WHERE owner_user_id = (select auth.uid())
+      SELECT id FROM brands WHERE owner_id = (select auth.uid())
     )
   );
 

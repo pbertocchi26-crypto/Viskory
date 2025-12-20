@@ -14,7 +14,7 @@
     
     - `brands`
       - `id` (uuid, primary key)
-      - `owner_user_id` (uuid, foreign key to users)
+      - `owner_id` (uuid, foreign key to users)
       - `name` (text)
       - `slug` (text, unique)
       - `logo_url` (text)
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS users (
 -- Brands table
 CREATE TABLE IF NOT EXISTS brands (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  owner_user_id uuid REFERENCES users(id) ON DELETE CASCADE,
+  owner_id uuid REFERENCES users(id) ON DELETE CASCADE,
   name text NOT NULL,
   slug text UNIQUE NOT NULL,
   logo_url text,
@@ -187,13 +187,13 @@ CREATE POLICY "Anyone can view approved brands"
 CREATE POLICY "Brand owners can update their brands"
   ON brands FOR UPDATE
   TO authenticated
-  USING (owner_user_id = auth.uid())
-  WITH CHECK (owner_user_id = auth.uid());
+  USING (owner_id = auth.uid())
+  WITH CHECK (owner_id = auth.uid());
 
 CREATE POLICY "Brand owners can insert their brands"
   ON brands FOR INSERT
   TO authenticated
-  WITH CHECK (owner_user_id = auth.uid());
+  WITH CHECK (owner_id = auth.uid());
 
 -- Products policies
 CREATE POLICY "Anyone can view published products"
@@ -207,7 +207,7 @@ CREATE POLICY "Brand owners can manage their products"
     EXISTS (
       SELECT 1 FROM brands
       WHERE brands.id = products.brand_id
-      AND brands.owner_user_id = auth.uid()
+      AND brands.owner_id = auth.uid()
     )
   );
 
@@ -263,7 +263,7 @@ CREATE POLICY "Users can create order items"
 
 -- Indexes for performance
 CREATE INDEX IF NOT EXISTS idx_brands_slug ON brands(slug);
-CREATE INDEX IF NOT EXISTS idx_brands_owner ON brands(owner_user_id);
+CREATE INDEX IF NOT EXISTS idx_brands_owner ON brands(owner_id);
 CREATE INDEX IF NOT EXISTS idx_products_brand ON products(brand_id);
 CREATE INDEX IF NOT EXISTS idx_products_published ON products(is_published);
 CREATE INDEX IF NOT EXISTS idx_follows_user ON follows(user_id);

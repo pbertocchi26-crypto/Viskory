@@ -47,23 +47,23 @@ CREATE POLICY "Users can update own data"
 CREATE POLICY "Brand owners can update their brands"
   ON brands FOR UPDATE
   TO authenticated
-  USING (owner_user_id = (select auth.uid()))
-  WITH CHECK (owner_user_id = (select auth.uid()));
+  USING (owner_id = (select auth.uid()))
+  WITH CHECK (owner_id = (select auth.uid()));
 
 CREATE POLICY "Brand owners can insert their brands"
   ON brands FOR INSERT
   TO authenticated
-  WITH CHECK (owner_user_id = (select auth.uid()));
+  WITH CHECK (owner_id = (select auth.uid()));
 
 -- Fix products policies - combine into single policy per action to avoid overlaps
 CREATE POLICY "Products select policy"
   ON products FOR SELECT
   USING (
-    is_published = true 
+    is_published = true
     OR EXISTS (
       SELECT 1 FROM brands
       WHERE brands.id = products.brand_id
-      AND brands.owner_user_id = (select auth.uid())
+      AND brands.owner_id = (select auth.uid())
     )
   );
 
@@ -74,7 +74,7 @@ CREATE POLICY "Brand owners can insert products"
     EXISTS (
       SELECT 1 FROM brands
       WHERE brands.id = products.brand_id
-      AND brands.owner_user_id = (select auth.uid())
+      AND brands.owner_id = (select auth.uid())
     )
   );
 
@@ -85,14 +85,14 @@ CREATE POLICY "Brand owners can update products"
     EXISTS (
       SELECT 1 FROM brands
       WHERE brands.id = products.brand_id
-      AND brands.owner_user_id = (select auth.uid())
+      AND brands.owner_id = (select auth.uid())
     )
   )
   WITH CHECK (
     EXISTS (
       SELECT 1 FROM brands
       WHERE brands.id = products.brand_id
-      AND brands.owner_user_id = (select auth.uid())
+      AND brands.owner_id = (select auth.uid())
     )
   );
 
@@ -103,7 +103,7 @@ CREATE POLICY "Brand owners can delete products"
     EXISTS (
       SELECT 1 FROM brands
       WHERE brands.id = products.brand_id
-      AND brands.owner_user_id = (select auth.uid())
+      AND brands.owner_id = (select auth.uid())
     )
   );
 

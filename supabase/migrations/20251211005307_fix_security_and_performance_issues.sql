@@ -102,7 +102,7 @@ CREATE POLICY "Brand owners can respond to reviews"
     EXISTS (
       SELECT 1 FROM brands
       WHERE brands.id = brand_reviews.brand_id
-      AND brands.owner_user_id = (SELECT auth.uid())
+      AND brands.owner_id = (SELECT auth.uid())
     )
   );
 
