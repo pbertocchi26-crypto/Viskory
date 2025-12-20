@@ -13,7 +13,7 @@ import Link from 'next/link';
 
 interface Brand {
   id: string;
-  name: string;
+  brand_name: string;
   slug: string;
   followers_count: number;
   status: string;
@@ -151,7 +151,7 @@ export default function AdminBrandsPage() {
                           href={`/brand/${brand.slug}`}
                           className="text-sm font-medium text-blue-600 hover:underline"
                         >
-                          {brand.name}
+                          {brand.brand_name}
                         </Link>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">

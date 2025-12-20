@@ -2,7 +2,7 @@ import { supabase } from './supabase/client';
 
 export interface Brand {
   id: string;
-  name: string;
+  brand_name: string;
   slug: string;
   logo_url?: string;
   short_bio?: string;

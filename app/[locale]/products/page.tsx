@@ -24,7 +24,7 @@ async function getProducts(filters: any) {
   const supabase = createServerClient();
   let query = supabase
     .from('products')
-    .select('*, brands!inner(id, name)')
+    .select('*, brands!inner(id, brand_name)')
     .eq('is_published', true);
 
   if (filters.discount) {

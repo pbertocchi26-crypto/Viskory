@@ -34,7 +34,7 @@ interface Product {
 
 interface Brand {
   id: string;
-  name: string;
+  brand_name: string;
   slug: string;
   website_url?: string;
 }
@@ -75,7 +75,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
 
       const { data: brandData } = await supabase
         .from('brands')
-        .select('id, name, slug, website_url')
+        .select('id, brand_name, slug, website_url')
         .eq('id', productData.brand_id)
         .maybeSingle();
 
@@ -123,7 +123,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
 
     toast({
       title: 'Reindirizzamento in corso',
-      description: `Ti stiamo portando sul sito di ${brand.name}`,
+      description: `Ti stiamo portando sul sito di ${brand.brand_name}`,
     });
   };
 
@@ -194,7 +194,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                   className="text-sm font-semibold text-primary hover:underline inline-flex items-center gap-2 mb-3"
                 >
                   <ShoppingBag className="w-4 h-4" />
-                  {brand.name}
+                  {brand.brand_name}
                 </Link>
               )}
               <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{product.name}</h1>
@@ -287,11 +287,11 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                 onClick={handleBuyOnBrandSite}
               >
                 <ExternalLink className="w-5 h-5 mr-2" />
-                Acquista su {brand?.name || 'sito del brand'}
+                Acquista su {brand?.brand_name || 'sito del brand'}
               </Button>
 
               <p className="text-xs text-center text-muted-foreground">
-                Verrai reindirizzato al sito ufficiale di {brand?.name || 'questo brand'} per completare l'acquisto
+                Verrai reindirizzato al sito ufficiale di {brand?.brand_name || 'questo brand'} per completare l'acquisto
               </p>
 
               {brand?.website_url && (
@@ -301,7 +301,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                   rel="noopener noreferrer"
                   className="block text-center text-sm text-primary hover:underline"
                 >
-                  Visita il sito di {brand.name}
+                  Visita il sito di {brand.brand_name}
                 </Link>
               )}
             </div>

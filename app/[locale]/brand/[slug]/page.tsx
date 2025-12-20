@@ -21,15 +21,19 @@ import Link from 'next/link';
 
 interface Brand {
   id: string;
-  name: string;
+  brand_name: string;
   slug: string;
   logo_url?: string;
   cover_image_url?: string;
   short_bio?: string;
-  description?: string;
-  location?: string;
+  full_description?: string;
+  address?: string;
+  country?: string;
+  city?: string;
+  phone?: string;
   instagram_url?: string;
-  tiktok_url?: string;
+  tiktok_handle?: string;
+  facebook_url?: string;
   website_url?: string;
   followers_count: number;
   story_title?: string;
@@ -282,7 +286,7 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
         setIsFollowing(false);
         toast({
           title: 'Unfollowed',
-          description: `You unfollowed ${brand.name}`,
+          description: `You unfollowed ${brand.brand_name}`,
         });
       }
     } else {
@@ -294,7 +298,7 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
         setIsFollowing(true);
         toast({
           title: 'Following',
-          description: `You are now following ${brand.name}`,
+          description: `You are now following ${brand.brand_name}`,
         });
       }
     }
@@ -332,7 +336,7 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
         <div className="w-full h-64 relative bg-gray-200">
           <Image
             src={brand.cover_image_url}
-            alt={brand.name}
+            alt={brand.brand_name}
             fill
             className="object-cover"
           />
@@ -347,13 +351,13 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
               {brand.logo_url ? (
                 <Image
                   src={brand.logo_url}
-                  alt={brand.name}
+                  alt={brand.brand_name}
                   fill
                   className="object-cover"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-4xl font-bold text-gray-400">
-                  {brand.name.charAt(0)}
+                  {brand.brand_name.charAt(0)}
                 </div>
               )}
             </div>
@@ -362,7 +366,7 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
           <div className="flex-1">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <h1 className="text-4xl font-bold text-text mb-2">{brand.name}</h1>
+                <h1 className="text-4xl font-bold text-text mb-2">{brand.brand_name}</h1>
                 <p className="text-muted-foreground">@{brand.slug}</p>
               </div>
               <Button
@@ -383,10 +387,10 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
                 <Users className="w-4 h-4 mr-1" />
                 <span>{brand.followers_count} followers</span>
               </div>
-              {brand.location && (
+              {(brand.city || brand.country) && (
                 <div className="flex items-center">
                   <MapPin className="w-4 h-4 mr-1" />
-                  <span>{brand.location}</span>
+                  <span>{[brand.city, brand.country].filter(Boolean).join(', ')}</span>
                 </div>
               )}
             </div>
@@ -413,10 +417,10 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
         </div>
 
         {/* About Section */}
-        {brand.description && (
+        {brand.full_description && (
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-text mb-4">About</h2>
-            <p className="text-text whitespace-pre-line leading-relaxed">{brand.description}</p>
+            <p className="text-text whitespace-pre-line leading-relaxed">{brand.full_description}</p>
           </div>
         )}
 
@@ -447,7 +451,7 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
                     >
                       <Image
                         src={imageUrl}
-                        alt={`${brand.name} story ${index + 1}`}
+                        alt={`${brand.brand_name} story ${index + 1}`}
                         fill
                         className="object-cover hover:scale-105 transition-transform duration-300"
                       />

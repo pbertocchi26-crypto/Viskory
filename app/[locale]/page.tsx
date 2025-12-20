@@ -60,7 +60,7 @@ export default function Home() {
 
     const { data: bestSellersData } = await supabase
       .from('products')
-      .select('*, brands!inner(name)')
+      .select('*, brands!inner(brand_name)')
       .eq('is_published', true)
       .order('like_count', { ascending: false })
       .limit(12);
@@ -69,7 +69,7 @@ export default function Home() {
 
     const { data: newArrivalsData } = await supabase
       .from('products')
-      .select('*, brands!inner(name)')
+      .select('*, brands!inner(brand_name)')
       .eq('is_published', true)
       .order('created_at', { ascending: false })
       .limit(12);
@@ -78,7 +78,7 @@ export default function Home() {
 
     const { data: discountedData } = await supabase
       .from('products')
-      .select('*, brands!inner(name)')
+      .select('*, brands!inner(brand_name)')
       .eq('is_published', true)
       .gt('discount_percentage', 0)
       .order('discount_percentage', { ascending: false })
@@ -261,11 +261,11 @@ export default function Home() {
                   <div key={brand.id} className="w-[280px] flex-shrink-0">
                     <BrandCard
                       id={brand.id}
-                      name={brand.name}
+                      name={brand.brand_name}
                       logoUrl={brand.logo_url}
                       slug={brand.slug}
-                      shortBio={brand.tagline}
-                      followersCount={brand.follower_count || 0}
+                      shortBio={brand.short_bio}
+                      followersCount={brand.followers_count || 0}
                     />
                   </div>
                 ))}

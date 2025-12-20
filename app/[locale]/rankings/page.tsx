@@ -13,10 +13,10 @@ import { Trophy, TrendingUp, Award } from 'lucide-react';
 
 interface BrandRanking {
   id: string;
-  name: string;
+  brand_name: string;
   slug: string;
   logo_url: string | null;
-  tagline: string | null;
+  short_bio: string | null;
   score: number;
   avgRating: number;
   reviewsCount: number;
@@ -40,7 +40,7 @@ export default function RankingsPage() {
 
     const { data: brands } = await supabase
       .from('brands')
-      .select('id, name, slug, logo_url, tagline')
+      .select('id, brand_name, slug, logo_url, short_bio')
       .order('created_at', { ascending: false });
 
     if (!brands) {
@@ -75,10 +75,10 @@ export default function RankingsPage() {
 
         return {
           id: brand.id,
-          name: brand.name,
+          brand_name: brand.brand_name,
           slug: brand.slug,
           logo_url: brand.logo_url,
-          tagline: brand.tagline,
+          short_bio: brand.short_bio,
           score: Math.round(score * 10) / 10,
           avgRating: Math.round(avgRating * 10) / 10,
           reviewsCount,
@@ -161,22 +161,22 @@ export default function RankingsPage() {
                         {brand.logo_url ? (
                           <img
                             src={brand.logo_url}
-                            alt={brand.name}
+                            alt={brand.brand_name}
                             className="w-12 h-12 md:w-16 md:h-16 rounded-lg object-cover border border-border flex-shrink-0"
                           />
                         ) : (
                           <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
                             <span className="text-xl md:text-2xl font-bold text-muted-foreground">
-                              {brand.name.charAt(0)}
+                              {brand.brand_name.charAt(0)}
                             </span>
                           </div>
                         )}
 
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-lg md:text-xl font-bold truncate">{brand.name}</h3>
-                          {brand.tagline && (
+                          <h3 className="text-lg md:text-xl font-bold truncate">{brand.brand_name}</h3>
+                          {brand.short_bio && (
                             <p className="text-sm text-muted-foreground truncate">
-                              {brand.tagline}
+                              {brand.short_bio}
                             </p>
                           )}
                         </div>

@@ -17,16 +17,31 @@ import Image from 'next/image';
 
 interface BrandProfile {
   id?: string;
-  name: string;
+  brand_name: string;
   slug: string;
   logo_url: string;
   cover_image_url: string;
   short_bio: string;
   full_description: string;
-  location: string;
-  instagram_url: string;
-  tiktok_url: string;
+  address: string;
+  country: string;
+  city: string;
+  vat_number: string;
+  contact_name: string;
+  email: string;
+  phone: string;
   website_url: string;
+  instagram_url: string;
+  facebook_url: string;
+  tiktok_handle: string;
+  pinterest_url: string;
+  linkedin_url: string;
+  founded_year: number;
+  business_sector: string;
+  target_audience: string[];
+  average_price_range: string;
+  production_origin: string;
+  brand_values: string[];
   story_title?: string;
   story_content?: string;
   story_images?: string[];
@@ -35,16 +50,31 @@ interface BrandProfile {
 export default function BrandProfilePage() {
   const t = useTranslations();
   const [profile, setProfile] = useState<BrandProfile>({
-    name: '',
+    brand_name: '',
     slug: '',
     logo_url: '',
     cover_image_url: '',
     short_bio: '',
     full_description: '',
-    location: '',
-    instagram_url: '',
-    tiktok_url: '',
+    address: '',
+    country: '',
+    city: '',
+    vat_number: '',
+    contact_name: '',
+    email: '',
+    phone: '',
     website_url: '',
+    instagram_url: '',
+    facebook_url: '',
+    tiktok_handle: '',
+    pinterest_url: '',
+    linkedin_url: '',
+    founded_year: 0,
+    business_sector: '',
+    target_audience: [],
+    average_price_range: '',
+    production_origin: '',
+    brand_values: [],
     story_title: '',
     story_content: '',
     story_images: [],
@@ -147,7 +177,7 @@ export default function BrandProfilePage() {
   };
 
   const generateSlug = () => {
-    const slug = profile.name
+    const slug = profile.brand_name
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-|-$/g, '');
@@ -234,11 +264,11 @@ export default function BrandProfilePage() {
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="name">Brand Name *</Label>
+                <Label htmlFor="brand_name">Brand Name *</Label>
                 <Input
-                  id="name"
-                  value={profile.name}
-                  onChange={(e) => handleChange('name', e.target.value)}
+                  id="brand_name"
+                  value={profile.brand_name}
+                  onChange={(e) => handleChange('brand_name', e.target.value)}
                   required
                 />
               </div>
@@ -307,12 +337,22 @@ export default function BrandProfilePage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="location">Location</Label>
+                <Label htmlFor="city">City</Label>
                 <Input
-                  id="location"
-                  value={profile.location}
-                  onChange={(e) => handleChange('location', e.target.value)}
-                  placeholder="New York, USA"
+                  id="city"
+                  value={profile.city}
+                  onChange={(e) => handleChange('city', e.target.value)}
+                  placeholder="New York"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="country">Country</Label>
+                <Input
+                  id="country"
+                  value={profile.country}
+                  onChange={(e) => handleChange('country', e.target.value)}
+                  placeholder="USA"
                 />
               </div>
 
@@ -328,13 +368,13 @@ export default function BrandProfilePage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="tiktok_url">TikTok URL</Label>
+                <Label htmlFor="tiktok_handle">TikTok Handle</Label>
                 <Input
-                  id="tiktok_url"
-                  type="url"
-                  value={profile.tiktok_url}
-                  onChange={(e) => handleChange('tiktok_url', e.target.value)}
-                  placeholder="https://tiktok.com/@yourbrand"
+                  id="tiktok_handle"
+                  type="text"
+                  value={profile.tiktok_handle}
+                  onChange={(e) => handleChange('tiktok_handle', e.target.value)}
+                  placeholder="yourbrand"
                 />
               </div>
 

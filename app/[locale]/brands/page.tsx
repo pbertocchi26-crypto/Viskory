@@ -9,7 +9,7 @@ import { Search } from 'lucide-react';
 
 interface Brand {
   id: string;
-  name: string;
+  brand_name: string;
   slug: string;
   logo_url?: string;
   short_bio?: string;
@@ -29,7 +29,7 @@ export default function BrandsPage() {
   useEffect(() => {
     if (searchQuery) {
       const filtered = brands.filter((brand) =>
-        brand.name.toLowerCase().includes(searchQuery.toLowerCase())
+        brand.brand_name.toLowerCase().includes(searchQuery.toLowerCase())
       );
       setFilteredBrands(filtered);
     } else {
@@ -83,7 +83,7 @@ export default function BrandsPage() {
               <BrandCard
                 key={brand.id}
                 id={brand.id}
-                name={brand.name}
+                name={brand.brand_name}
                 slug={brand.slug}
                 logoUrl={brand.logo_url}
                 shortBio={brand.short_bio}

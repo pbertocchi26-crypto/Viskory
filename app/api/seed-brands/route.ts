@@ -34,12 +34,11 @@ export async function POST() {
       const { data: brand, error: brandError } = await supabase
         .from('brands')
         .insert({
-          name: brandData.name,
+          brand_name: brandData.name,
           slug: slug,
-          tagline: brandData.tagline,
+          short_bio: brandData.tagline,
           logo_url: brandData.logo,
           full_description: `${brandData.name} is an emerging Italian fashion brand focused on ${brandData.tagline.toLowerCase()}.`,
-          follower_count: Math.floor(Math.random() * 1000) + 100,
           owner_user_id: '00000000-0000-0000-0000-000000000000',
         })
         .select()
