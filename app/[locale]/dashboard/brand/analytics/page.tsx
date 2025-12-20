@@ -308,7 +308,7 @@ export default function AnalyticsPage() {
       icon: Eye,
       color: 'text-blue-600',
       bgColor: 'bg-blue-50',
-      full_description: 'Visite alle pagine dei tuoi prodotti'
+      description: 'Visite alle pagine dei tuoi prodotti'
     },
     {
       title: 'Click esterni',
@@ -316,7 +316,7 @@ export default function AnalyticsPage() {
       icon: MousePointer,
       color: 'text-green-600',
       bgColor: 'bg-green-50',
-      full_description: 'Click verso il tuo sito'
+      description: 'Click verso il tuo sito'
     },
     {
       title: 'Vendite sincronizzate',
@@ -324,7 +324,7 @@ export default function AnalyticsPage() {
       icon: ShoppingCart,
       color: 'text-purple-600',
       bgColor: 'bg-purple-50',
-      full_description: 'Vendite dal tuo sito'
+      description: 'Vendite dal tuo sito'
     },
     {
       title: 'Fatturato totale',
@@ -332,7 +332,7 @@ export default function AnalyticsPage() {
       icon: DollarSign,
       color: 'text-orange-600',
       bgColor: 'bg-orange-50',
-      full_description: 'Dalle vendite sincronizzate'
+      description: 'Dalle vendite sincronizzate'
     },
     {
       title: 'Tasso di conversione',
@@ -340,7 +340,7 @@ export default function AnalyticsPage() {
       icon: TrendingUp,
       color: 'text-indigo-600',
       bgColor: 'bg-indigo-50',
-      full_description: 'Click che diventano vendite'
+      description: 'Click che diventano vendite'
     },
     {
       title: 'Click-Through Rate',
@@ -348,7 +348,7 @@ export default function AnalyticsPage() {
       icon: ExternalLink,
       color: 'text-pink-600',
       bgColor: 'bg-pink-50',
-      full_description: 'Visualizzazioni che diventano click'
+      description: 'Visualizzazioni che diventano click'
     }
   ];
 

@@ -61,13 +61,13 @@ export default function AdminProductsPage() {
     if (error) {
       toast({
         title: 'Error',
-        full_description: error.message,
+        description: error.message,
         variant: 'destructive',
       });
     } else {
       toast({
         title: 'Success',
-        full_description: `Product ${!currentStatus ? 'published' : 'unpublished'}`,
+        description: `Product ${!currentStatus ? 'published' : 'unpublished'}`,
       });
       setProducts(
         products.map((p) =>
@@ -85,13 +85,13 @@ export default function AdminProductsPage() {
     if (error) {
       toast({
         title: 'Error',
-        full_description: error.message,
+        description: error.message,
         variant: 'destructive',
       });
     } else {
       toast({
         title: 'Success',
-        full_description: 'Product deleted',
+        description: 'Product deleted',
       });
       setProducts(products.filter((p) => p.id !== productId));
     }

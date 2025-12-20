@@ -190,7 +190,7 @@ export function BrandRegistrationForm() {
             vat_number: vatNumber || null,
             phone: phone || null,
             short_bio: shortBio,
-            description,
+            full_description: description,
             founded_year: foundedYear ? parseInt(foundedYear) : null,
             business_sector: businessSector,
             website_url: websiteUrl,

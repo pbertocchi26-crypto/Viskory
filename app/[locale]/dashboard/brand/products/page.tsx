@@ -103,13 +103,13 @@ export default function ProductsManagementPage() {
     if (error) {
       toast({
         title: t('common.error'),
-        full_description: error.message,
+        description: error.message,
         variant: 'destructive',
       });
     } else {
       toast({
         title: t('common.success'),
-        full_description: 'Product deleted successfully',
+        description: 'Product deleted successfully',
       });
       setProducts(products.filter((p) => p.id !== productId));
       setScheduledProducts(scheduledProducts.filter((p) => p.id !== productId));
@@ -132,13 +132,13 @@ export default function ProductsManagementPage() {
     if (error) {
       toast({
         title: t('common.error'),
-        full_description: error.message,
+        description: error.message,
         variant: 'destructive',
       });
     } else {
       toast({
         title: t('common.success'),
-        full_description: `Product ${!currentStatus ? 'published' : 'unpublished'}`,
+        description: `Product ${!currentStatus ? 'published' : 'unpublished'}`,
       });
       loadProducts();
     }
@@ -157,13 +157,13 @@ export default function ProductsManagementPage() {
     if (error) {
       toast({
         title: t('common.error'),
-        full_description: error.message,
+        description: error.message,
         variant: 'destructive',
       });
     } else {
       toast({
         title: t('common.success'),
-        full_description: 'Product published successfully',
+        description: 'Product published successfully',
       });
       loadProducts();
     }
@@ -180,13 +180,13 @@ export default function ProductsManagementPage() {
     if (error) {
       toast({
         title: t('common.error'),
-        full_description: error.message,
+        description: error.message,
         variant: 'destructive',
       });
     } else {
       toast({
         title: t('common.success'),
-        full_description: 'Schedule cancelled',
+        description: 'Schedule cancelled',
       });
       loadProducts();
     }

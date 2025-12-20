@@ -62,13 +62,13 @@ export default function AdminBrandsPage() {
     if (error) {
       toast({
         title: 'Error',
-        full_description: error.message,
+        description: error.message,
         variant: 'destructive',
       });
     } else {
       toast({
         title: 'Success',
-        full_description: 'Brand status updated',
+        description: 'Brand status updated',
       });
       setBrands(brands.map((b) => (b.id === brandId ? { ...b, status: newStatus } : b)));
     }
@@ -83,13 +83,13 @@ export default function AdminBrandsPage() {
     if (error) {
       toast({
         title: 'Error',
-        full_description: error.message,
+        description: error.message,
         variant: 'destructive',
       });
     } else {
       toast({
         title: 'Success',
-        full_description: `Brand ${!currentStatus ? 'featured' : 'unfeatured'}`,
+        description: `Brand ${!currentStatus ? 'featured' : 'unfeatured'}`,
       });
       setBrands(
         brands.map((b) =>

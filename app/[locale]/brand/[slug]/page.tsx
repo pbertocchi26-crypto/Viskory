@@ -263,7 +263,7 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
     if (!user) {
       toast({
         title: 'Login required',
-        full_description: 'Please login to follow brands',
+        description: 'Please login to follow brands',
         variant: 'destructive',
       });
       return;
@@ -282,7 +282,7 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
         setIsFollowing(false);
         toast({
           title: 'Unfollowed',
-          full_description: `You unfollowed ${brand.name}`,
+          description: `You unfollowed ${brand.name}`,
         });
       }
     } else {
@@ -294,7 +294,7 @@ export default function BrandProfilePage({ params }: { params: { slug: string } 
         setIsFollowing(true);
         toast({
           title: 'Following',
-          full_description: `You are now following ${brand.name}`,
+          description: `You are now following ${brand.name}`,
         });
       }
     }

@@ -57,13 +57,13 @@ export default function AdminUsersPage() {
     if (error) {
       toast({
         title: 'Error',
-        full_description: error.message,
+        description: error.message,
         variant: 'destructive',
       });
     } else {
       toast({
         title: 'Success',
-        full_description: 'User role updated successfully',
+        description: 'User role updated successfully',
       });
       setUsers(users.map((u) => (u.id === userId ? { ...u, role: newRole } : u)));
     }

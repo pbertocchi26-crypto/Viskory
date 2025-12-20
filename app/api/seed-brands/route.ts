@@ -38,7 +38,7 @@ export async function POST() {
           slug: slug,
           tagline: brandData.tagline,
           logo_url: brandData.logo,
-          description: `${brandData.name} is an emerging Italian fashion brand focused on ${brandData.tagline.toLowerCase()}.`,
+          full_description: `${brandData.name} is an emerging Italian fashion brand focused on ${brandData.tagline.toLowerCase()}.`,
           follower_count: Math.floor(Math.random() * 1000) + 100,
           owner_user_id: '00000000-0000-0000-0000-000000000000',
         })

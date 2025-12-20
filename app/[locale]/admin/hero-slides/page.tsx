@@ -65,7 +65,7 @@ export default function AdminHeroSlidesPage() {
     if (error) {
       toast({
         title: 'Error',
-        full_description: 'Failed to load slides',
+        description: 'Failed to load slides',
         variant: 'destructive',
       });
     } else {
@@ -103,13 +103,13 @@ export default function AdminHeroSlidesPage() {
     if (error) {
       toast({
         title: 'Error',
-        full_description: 'Failed to update slide',
+        description: 'Failed to update slide',
         variant: 'destructive',
       });
     } else {
       toast({
         title: 'Success',
-        full_description: 'Slide updated successfully',
+        description: 'Slide updated successfully',
       });
       loadSlides();
     }
@@ -126,13 +126,13 @@ export default function AdminHeroSlidesPage() {
     if (error) {
       toast({
         title: 'Error',
-        full_description: 'Failed to delete slide',
+        description: 'Failed to delete slide',
         variant: 'destructive',
       });
     } else {
       toast({
         title: 'Success',
-        full_description: 'Slide deleted successfully',
+        description: 'Slide deleted successfully',
       });
       loadSlides();
     }

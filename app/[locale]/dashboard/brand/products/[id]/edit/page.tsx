@@ -69,7 +69,7 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
     if (!product) {
       toast({
         title: t('common.error'),
-        full_description: 'Product not found',
+        description: 'Product not found',
         variant: 'destructive',
       });
       router.push('/dashboard/brand/products');

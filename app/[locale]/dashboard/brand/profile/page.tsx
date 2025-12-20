@@ -22,7 +22,7 @@ interface BrandProfile {
   logo_url: string;
   cover_image_url: string;
   short_bio: string;
-  description: string;
+  full_description: string;
   location: string;
   instagram_url: string;
   tiktok_url: string;
@@ -40,7 +40,7 @@ export default function BrandProfilePage() {
     logo_url: '',
     cover_image_url: '',
     short_bio: '',
-    description: '',
+    full_description: '',
     location: '',
     instagram_url: '',
     tiktok_url: '',
@@ -96,7 +96,7 @@ export default function BrandProfilePage() {
         if (existingSlug) {
           toast({
             title: 'Error',
-            full_description: 'This slug is already taken',
+            description: 'This slug is already taken',
             variant: 'destructive',
           });
           setLoading(false);
@@ -114,7 +114,7 @@ export default function BrandProfilePage() {
 
         toast({
           title: 'Success',
-          full_description: 'Brand profile created successfully',
+          description: 'Brand profile created successfully',
         });
       } else {
         const { error } = await supabase
@@ -126,7 +126,7 @@ export default function BrandProfilePage() {
 
         toast({
           title: 'Success',
-          full_description: 'Brand profile updated successfully',
+          description: 'Brand profile updated successfully',
         });
       }
 
@@ -296,11 +296,11 @@ export default function BrandProfilePage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="description">Description</Label>
+                <Label htmlFor="full_description">Description</Label>
                 <Textarea
-                  id="description"
-                  value={profile.description}
-                  onChange={(e) => handleChange('description', e.target.value)}
+                  id="full_description"
+                  value={profile.full_description}
+                  onChange={(e) => handleChange('full_description', e.target.value)}
                   placeholder="Tell customers about your brand story and values"
                   rows={6}
                 />
