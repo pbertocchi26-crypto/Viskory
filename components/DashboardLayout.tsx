@@ -43,7 +43,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
     const { data } = await supabase
       .from('brands')
       .select('slug')
-      .eq('owner_user_id', user.id)
+      .eq('owner_id', user.id)
       .maybeSingle();
 
     if (data) {

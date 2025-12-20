@@ -29,7 +29,7 @@ export default function NewProductPage() {
     const { data: brand } = await supabase
       .from('brands')
       .select('id')
-      .eq('owner_user_id', user.id)
+      .eq('owner_id', user.id)
       .maybeSingle();
 
     if (!brand) {

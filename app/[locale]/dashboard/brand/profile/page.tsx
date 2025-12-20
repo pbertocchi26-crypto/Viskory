@@ -101,7 +101,7 @@ export default function BrandProfilePage() {
     const { data: brand } = await supabase
       .from('brands')
       .select('*')
-      .eq('owner_user_id', user.id)
+      .eq('owner_id', user.id)
       .maybeSingle();
 
     if (brand) {
@@ -136,7 +136,7 @@ export default function BrandProfilePage() {
         const { error } = await supabase.from('brands').insert([
           {
             ...profile,
-            owner_user_id: user!.id,
+            owner_id: user!.id,
           },
         ]);
 

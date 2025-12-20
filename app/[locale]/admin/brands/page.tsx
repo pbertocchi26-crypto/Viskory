@@ -43,7 +43,7 @@ export default function AdminBrandsPage() {
   const loadBrands = async () => {
     const { data } = await supabase
       .from('brands')
-      .select('*, users!brands_owner_user_id_fkey(email)')
+      .select('*, users!brands_owner_id_fkey(email)')
       .order('created_at', { ascending: false });
 
     if (data) {

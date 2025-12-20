@@ -39,7 +39,7 @@ export async function POST() {
           short_bio: brandData.tagline,
           logo_url: brandData.logo,
           full_description: `${brandData.name} is an emerging Italian fashion brand focused on ${brandData.tagline.toLowerCase()}.`,
-          owner_user_id: '00000000-0000-0000-0000-000000000000',
+          owner_id: '00000000-0000-0000-0000-000000000000',
         })
         .select()
         .single();

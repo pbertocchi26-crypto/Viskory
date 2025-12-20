@@ -181,7 +181,7 @@ export function BrandRegistrationForm() {
         .from('brands')
         .insert([
           {
-            owner_user_id: userId,
+            owner_id: userId,
             brand_name: brandName,
             slug,
             country,
