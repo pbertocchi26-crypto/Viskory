@@ -44,7 +44,7 @@ export async function signUp(
 
     // Fetch the user that should already exist
     const { data: userData, error: userError } = await supabase
-      .from('users')
+      .from('profiles')
       .select('*')
       .eq('id', authData.user.id)
       .maybeSingle();
@@ -80,9 +80,9 @@ export async function signIn(
       return { user: null, error: 'Invalid credentials' };
     }
 
-    // Fetch user data from our users table
+    // Fetch user data from profiles table
     const { data: userData, error: userError } = await supabase
-      .from('users')
+      .from('profiles')
       .select('*')
       .eq('id', authData.user.id)
       .maybeSingle();
@@ -93,8 +93,8 @@ export async function signIn(
 
     // Update last sign in
     await supabase
-      .from('users')
-      .update({ last_sign_in_at: new Date().toISOString() })
+      .from('profiles')
+      .update({ updated_at: new Date().toISOString() })
       .eq('id', userData.id);
 
     return { user: userData, error: null };
@@ -139,9 +139,9 @@ export async function getCurrentUser(): Promise<User | null> {
       return null;
     }
 
-    // Fetch user data from our users table
+    // Fetch user data from profiles table
     const { data: userData, error } = await supabase
-      .from('users')
+      .from('profiles')
       .select('*')
       .eq('id', session.user.id)
       .maybeSingle();
@@ -169,7 +169,7 @@ export async function handleOAuthCallback(): Promise<{ user: User | null; error:
 
     // Check if user record exists
     const { data: existingUser } = await supabase
-      .from('users')
+      .from('profiles')
       .select('*')
       .eq('id', authUser.id)
       .maybeSingle();
@@ -177,8 +177,8 @@ export async function handleOAuthCallback(): Promise<{ user: User | null; error:
     if (existingUser) {
       // Update last sign in
       await supabase
-        .from('users')
-        .update({ last_sign_in_at: new Date().toISOString() })
+        .from('profiles')
+        .update({ updated_at: new Date().toISOString() })
         .eq('id', existingUser.id);
 
       return { user: existingUser, error: null };
@@ -201,7 +201,7 @@ export function onAuthStateChange(callback: (user: User | null) => void) {
   return supabase.auth.onAuthStateChange(async (event, session) => {
     if (session?.user) {
       const { data: userData } = await supabase
-        .from('users')
+        .from('profiles')
         .select('*')
         .eq('id', session.user.id)
         .maybeSingle();

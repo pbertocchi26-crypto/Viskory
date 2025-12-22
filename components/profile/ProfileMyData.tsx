@@ -30,7 +30,7 @@ export function ProfileMyData({ user }: ProfileMyDataProps) {
 
     try {
       const { error } = await supabase
-        .from('users')
+        .from('profiles')
         .update({ name })
         .eq('id', user.id);
 

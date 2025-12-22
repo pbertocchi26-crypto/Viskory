@@ -219,7 +219,7 @@ export function BrandRegistrationForm() {
 
       if (currentUser) {
         const { error: roleUpdateError } = await supabase
-          .from('users')
+          .from('profiles')
           .update({ role: 'BRAND' })
           .eq('id', currentUser.id);
 

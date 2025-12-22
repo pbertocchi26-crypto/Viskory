@@ -37,7 +37,7 @@ export default function AdminUsersPage() {
 
   const loadUsers = async () => {
     const { data } = await supabase
-      .from('users')
+      .from('profiles')
       .select('*')
       .order('created_at', { ascending: false });
 
@@ -50,7 +50,7 @@ export default function AdminUsersPage() {
 
   const handleRoleChange = async (userId: string, newRole: string) => {
     const { error } = await supabase
-      .from('users')
+      .from('profiles')
       .update({ role: newRole })
       .eq('id', userId);
 
