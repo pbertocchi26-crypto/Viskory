@@ -42,16 +42,16 @@ export async function signUp(
       return { user: null, error: 'Failed to create user' };
     }
 
-    // Fetch the profile that should already exist
+    // Fetch the user that should already exist
     const { data: userData, error: userError } = await supabase
-      .from('profiles')
+      .from('users')
       .select('*')
       .eq('id', authData.user.id)
       .maybeSingle();
 
     if (userError || !userData) {
       await supabase.auth.signOut();
-      return { user: null, error: 'Profile not found. Please contact support.' };
+      return { user: null, error: 'User profile not found. Please contact support.' };
     }
 
     return { user: userData, error: null };
@@ -82,7 +82,7 @@ export async function signIn(
 
     // Fetch user data from our users table
     const { data: userData, error: userError } = await supabase
-      .from('profiles')
+      .from('users')
       .select('*')
       .eq('id', authData.user.id)
       .maybeSingle();
@@ -93,7 +93,7 @@ export async function signIn(
 
     // Update last sign in
     await supabase
-      .from('profiles')
+      .from('users')
       .update({ last_sign_in_at: new Date().toISOString() })
       .eq('id', userData.id);
 
@@ -141,7 +141,7 @@ export async function getCurrentUser(): Promise<User | null> {
 
     // Fetch user data from our users table
     const { data: userData, error } = await supabase
-      .from('profiles')
+      .from('users')
       .select('*')
       .eq('id', session.user.id)
       .maybeSingle();
@@ -169,7 +169,7 @@ export async function handleOAuthCallback(): Promise<{ user: User | null; error:
 
     // Check if user record exists
     const { data: existingUser } = await supabase
-      .from('profiles')
+      .from('users')
       .select('*')
       .eq('id', authUser.id)
       .maybeSingle();
@@ -177,15 +177,15 @@ export async function handleOAuthCallback(): Promise<{ user: User | null; error:
     if (existingUser) {
       // Update last sign in
       await supabase
-        .from('profiles')
+        .from('users')
         .update({ last_sign_in_at: new Date().toISOString() })
         .eq('id', existingUser.id);
 
       return { user: existingUser, error: null };
     }
 
-    // Profile should already exist - if not, user needs to contact support
-    return { user: null, error: 'Profile not found. Please contact support.' };
+    // User should already exist - if not, user needs to contact support
+    return { user: null, error: 'User not found. Please contact support.' };
   } catch (error: any) {
     return { user: null, error: error.message };
   }
@@ -201,7 +201,7 @@ export function onAuthStateChange(callback: (user: User | null) => void) {
   return supabase.auth.onAuthStateChange(async (event, session) => {
     if (session?.user) {
       const { data: userData } = await supabase
-        .from('profiles')
+        .from('users')
         .select('*')
         .eq('id', session.user.id)
         .maybeSingle();

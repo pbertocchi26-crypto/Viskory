@@ -214,6 +214,20 @@ export function BrandRegistrationForm() {
         throw new Error(brandError.message);
       }
 
+      // Update user role to BRAND
+      const { data: { user: currentUser } } = await supabase.auth.getUser();
+
+      if (currentUser) {
+        const { error: roleUpdateError } = await supabase
+          .from('users')
+          .update({ role: 'BRAND' })
+          .eq('id', currentUser.id);
+
+        if (roleUpdateError) {
+          console.error('Error updating user role:', roleUpdateError);
+        }
+      }
+
       toast({
         title: 'Success',
         description: 'Brand registered successfully!',
