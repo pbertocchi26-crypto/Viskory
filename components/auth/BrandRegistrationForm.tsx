@@ -174,66 +174,73 @@ export function BrandRegistrationForm() {
     setLoading(true);
 
     try {
-      // Create brand record
-      const slug = brandName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      const requestData = {
+        name,
+        email,
+        brandName,
+        country,
+        city,
+        address,
+        vatNumber,
+        phone,
+        shortBio,
+        description,
+        foundedYear,
+        businessSector,
+        websiteUrl,
+        instagramUrl,
+        tiktokUrl,
+        facebookUrl,
+        pinterestUrl,
+        linkedinUrl,
+        targetAudience: JSON.stringify(targetAudience),
+        priceRange,
+        productionOrigin,
+        brandValues: JSON.stringify(brandValues),
+      };
 
-      const { data: brand, error: brandError } = await supabase
-        .from('brands')
-        .insert([
-          {
-            owner_id: userId,
-            brand_name: brandName,
-            slug,
-            country,
-            city,
-            address: address || null,
-            vat_number: vatNumber || null,
-            contact_name: name || null,
-            email: email || null,
-            phone: phone || null,
-            short_bio: shortBio,
-            full_description: description,
-            founded_year: foundedYear ? parseInt(foundedYear) : null,
-            business_sector: businessSector,
-            website_url: websiteUrl,
-            instagram_url: instagramUrl || null,
-            tiktok_handle: tiktokUrl || null,
-            facebook_url: facebookUrl || null,
-            pinterest_url: pinterestUrl || null,
-            linkedin_url: linkedinUrl || null,
-            target_audience: targetAudience,
-            average_price_range: priceRange,
-            production_origin: productionOrigin,
-            brand_values: brandValues,
-          },
-        ])
-        .select()
-        .single();
+      const { data: existingRequest } = await supabase
+        .from('brand_requests')
+        .select('id, status')
+        .eq('user_id', userId)
+        .in('status', ['PENDING', 'REJECTED'])
+        .maybeSingle();
 
-      if (brandError) {
-        throw new Error(brandError.message);
-      }
+      if (existingRequest) {
+        const { error: updateError } = await supabase
+          .from('brand_requests')
+          .update({
+            data: requestData,
+            status: 'PENDING',
+            admin_note: null,
+          })
+          .eq('id', existingRequest.id);
 
-      // Update user role to BRAND
-      const { data: { user: currentUser } } = await supabase.auth.getUser();
+        if (updateError) {
+          throw new Error(updateError.message);
+        }
+      } else {
+        const { error: insertError } = await supabase
+          .from('brand_requests')
+          .insert([
+            {
+              user_id: userId,
+              data: requestData,
+              status: 'PENDING',
+            },
+          ]);
 
-      if (currentUser) {
-        const { error: roleUpdateError } = await supabase
-          .from('profiles')
-          .update({ role: 'BRAND' })
-          .eq('id', currentUser.id);
-
-        if (roleUpdateError) {
-          console.error('Error updating user role:', roleUpdateError);
+        if (insertError) {
+          throw new Error(insertError.message);
         }
       }
 
       toast({
         title: 'Success',
-        description: 'Brand registered successfully!',
+        description: 'Brand request submitted successfully! Your request is under review.',
       });
 
-      router.push('/dashboard/brand');
+      router.push(`/${locale}`);
     } catch (error: any) {
       toast({
         title: 'Error',

@@ -136,7 +136,7 @@ export default function AdminDashboardPage() {
             <CardTitle>Management</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
               <Link href="/admin/users">
                 <Button className="w-full" variant="outline">
                   Manage Users
@@ -145,6 +145,11 @@ export default function AdminDashboardPage() {
               <Link href="/admin/brands">
                 <Button className="w-full" variant="outline">
                   Manage Brands
+                </Button>
+              </Link>
+              <Link href="/admin/brand-requests">
+                <Button className="w-full" variant="outline">
+                  Brand Requests
                 </Button>
               </Link>
               <Link href="/admin/products">

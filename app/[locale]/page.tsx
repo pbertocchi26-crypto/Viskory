@@ -8,6 +8,7 @@ import { ProductCard } from '@/components/ProductCard';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { HeroCarousel, HeroSlide } from '@/components/HeroCarousel';
+import { BrandRequestStatus } from '@/components/BrandRequestStatus';
 import { supabase } from '@/lib/supabase/client';
 import { getTrendingBrands } from '@/lib/trending';
 import { useTranslations, useLocale } from 'next-intl';
@@ -137,6 +138,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
+
+      {/* Brand Request Status */}
+      {user && (
+        <div className="container mx-auto px-4 pt-6">
+          <BrandRequestStatus />
+        </div>
+      )}
 
       {/* Hero Carousel Section */}
       <section className="bg-gradient-to-b from-gray-50 to-white pt-4">
