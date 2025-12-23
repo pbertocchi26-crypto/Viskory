@@ -3,7 +3,7 @@ import { createServerClient } from '@/lib/supabase/server';
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createServerClient();
+    const supabase = await createServerClient();
 
     const authHeader = request.headers.get('authorization');
     const webhookToken = authHeader?.replace('Bearer ', '');

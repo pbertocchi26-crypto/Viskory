@@ -21,7 +21,7 @@ interface ProductsPageProps {
 }
 
 async function getProducts(filters: any) {
-  const supabase = createServerClient();
+  const supabase = await createServerClient();
   let query = supabase
     .from('products')
     .select('*, brands!inner(id, brand_name)')
@@ -92,7 +92,7 @@ async function getProducts(filters: any) {
 }
 
 async function getBrands() {
-  const supabase = createServerClient();
+  const supabase = await createServerClient();
   const { data: brands } = await supabase
     .from('brands')
     .select('id, brand_name')

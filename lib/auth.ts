@@ -1,4 +1,6 @@
-import { supabase } from './supabase/client';
+import { createClient } from '@/utils/supabase/client';
+
+const supabase = createClient();
 
 export type UserRole = 'ADMIN' | 'BRAND' | 'USER';
 export type AuthProvider = 'email' | 'google' | 'apple' | 'facebook';
@@ -50,7 +52,6 @@ export async function signUp(
       .maybeSingle();
 
     if (userError || !userData) {
-      await supabase.auth.signOut();
       return { user: null, error: 'User profile not found. Please contact support.' };
     }
 
